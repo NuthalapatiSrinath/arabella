@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ChevronLeft,
   ChevronRight,
@@ -132,8 +132,8 @@ const RoomShowcase = () => {
   const sliderRef = useRef(null);
   const navigate = useNavigate();
 
-  // ---------- Cache-first load ----------
-  const cachedRooms = roomService.getCachedSearch({});
+  // ---------- Cache-first load (Unused) ----------
+  // const cachedRooms = roomService.getCachedSearch({});
 
   // ---------- Hardcoded Rooms per Request ----------
   const [rooms] = useState([
@@ -203,9 +203,9 @@ const RoomShowcase = () => {
     sliderRef.current.scrollLeft += direction === "left" ? -amount : amount;
   };
 
-  const handleNavigate = (id) => {
-    navigate(`/rooms/${id}`);
-  };
+  // const handleNavigate = (id) => {
+  //   navigate(`/rooms/${id}`);
+  // };
 
   return (
     <div className={styles.roomShowcase}>
@@ -247,41 +247,41 @@ const RoomShowcase = () => {
         <div className={styles.cardStrip} ref={sliderRef}>
           {loading
             ? [1, 2, 3].map((n) => (
-                <div
-                  key={n}
-                  className={styles.hotelCard}
-                  style={{ opacity: 0.5 }}
-                >
-                  <div style={{ height: 250, background: "#f3f3f3" }} />
-                  <div className={styles.cardContent}>
-                    <div style={{ height: 20, background: "#eee" }} />
-                  </div>
+              <div
+                key={n}
+                className={styles.hotelCard}
+                style={{ opacity: 0.5 }}
+              >
+                <div style={{ height: 250, background: "#f3f3f3" }} />
+                <div className={styles.cardContent}>
+                  <div style={{ height: 20, background: "#eee" }} />
                 </div>
-              ))
+              </div>
+            ))
             : rooms.map((room, idx) => {
-                // ❌ NO fallback image used
-                const imageUrl =
-                  typeof room.images?.[0] === "string"
-                    ? room.images[0]
-                    : room.images?.[0]?.url;
+              // ❌ NO fallback image used
+              const imageUrl =
+                typeof room.images?.[0] === "string"
+                  ? room.images[0]
+                  : room.images?.[0]?.url;
 
-                if (!imageUrl) return null; // ❗ skip cards without image
+              if (!imageUrl) return null; // ❗ skip cards without image
 
-                const amenityList =
-                  room.amenities
-                    ?.map((a) => (typeof a === "string" ? { name: a } : a))
-                    .slice(0, 4) || [];
+              const amenityList =
+                room.amenities
+                  ?.map((a) => (typeof a === "string" ? { name: a } : a))
+                  .slice(0, 4) || [];
 
-                return (
-                  <RoomCardWithSlider
-                    key={room._id}
-                    room={room}
-                    amenityList={amenityList}
-                    sliderImages={roomSliderImages}
-                    cardIdx={idx}
-                  />
-                );
-              })}
+              return (
+                <RoomCardWithSlider
+                  key={room._id}
+                  room={room}
+                  amenityList={amenityList}
+                  sliderImages={roomSliderImages}
+                  cardIdx={idx}
+                />
+              );
+            })}
         </div>
       </div>
     </div>

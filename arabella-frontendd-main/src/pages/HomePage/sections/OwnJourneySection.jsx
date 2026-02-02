@@ -12,7 +12,7 @@ import {
 import styles from "../HomePage.module.css";
 
 const OwnJourneySection = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // --- STATE ---
   const [currentMonth, setCurrentMonth] = useState(new Date());
