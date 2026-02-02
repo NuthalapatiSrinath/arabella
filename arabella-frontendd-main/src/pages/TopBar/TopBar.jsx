@@ -1,50 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-// ...existing code...
-import {
-  Menu,
-  X,
-  User,
-  LogOut,
-  ChevronDown,
-  Calendar,
-  UserCircle,
-} from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import styles from "./TopBar.module.css";
 
 const TopBar = () => {
-  const dispatch = useDispatch();
   const location = useLocation();
-  const navigate = useNavigate();
   // ...existing code...
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Dropdown State
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
-
-  // ✅ 1. AUTO-LOGOUT CHECK
-  // If Redux says we are logged in, but LocalStorage has no token, force logout.
-  // ...existing code...
-
-  // Scroll & Outside Click Effects
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
 
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -53,22 +25,7 @@ const TopBar = () => {
 
   // ...existing code...
 
-  const handleProfileClick = () => {
-    navigate("/profile");
-    setShowDropdown(false);
-  };
 
-  // ...existing code...
-
-  const handleBookNow = () => {
-    navigate("/rooms");
-    setIsMenuOpen(false);
-  };
-
-  const handleMyBookings = () => {
-    navigate("/my-bookings");
-    setShowDropdown(false);
-  };
 
   return (
     <div className={`${styles.mainNav} ${isScrolled ? styles.stickyShadow : ""}`}>
