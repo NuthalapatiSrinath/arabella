@@ -98,38 +98,38 @@ const OwnJourneySection = () => {
   const totalGuests = rooms.reduce((acc, r) => acc + r.adults + r.children, 0);
 
   // --- NAVIGATION HANDLER ---
-  const handleSearch = () => {
-    // Default to today/tomorrow if nothing selected
-    const startDate = checkIn || new Date();
-    let endDate = checkOut;
+  // const handleSearch = () => {
+  //   // Default to today/tomorrow if nothing selected
+  //   const startDate = checkIn || new Date();
+  //   let endDate = checkOut;
 
-    if (!endDate) {
-      endDate = new Date(startDate);
-      endDate.setDate(endDate.getDate() + 1);
-    }
+  //   if (!endDate) {
+  //     endDate = new Date(startDate);
+  //     endDate.setDate(endDate.getDate() + 1);
+  //   }
 
-    const nights = Math.ceil(
-      Math.abs(endDate - startDate) / (1000 * 60 * 60 * 24)
-    );
+  //   const nights = Math.ceil(
+  //     Math.abs(endDate - startDate) / (1000 * 60 * 60 * 24)
+  //   );
 
-    // Data payload
-    const searchParams = {
-      checkIn: startDate,
-      checkOut: endDate,
-      guests: totalGuests || 1,
-      rooms: rooms.length,
-      nights: nights || 1,
-    };
+  //   // Data payload
+  //   const searchParams = {
+  //     checkIn: startDate,
+  //     checkOut: endDate,
+  //     guests: totalGuests || 1,
+  //     rooms: rooms.length,
+  //     nights: nights || 1,
+  //   };
 
-    console.log("Navigating with params:", searchParams); // Debug check
+  //   console.log("Navigating with params:", searchParams); // Debug check
 
-    navigate("/rooms", {
-      state: {
-        isSearched: true,
-        searchParams: searchParams,
-      },
-    });
-  };
+  //   navigate("/rooms", {
+  //     state: {
+  //       isSearched: true,
+  //       searchParams: searchParams,
+  //     },
+  //   });
+  // };
 
   // --- FORMATTERS ---
   const formatDate = (date) => {
