@@ -1,0 +1,9 @@
+{
+    "name": "arabella-root",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "npm start --prefix arabella-frontendd-main",
+        "build": "npm run build --prefix arabella-frontendd-main",
+        "test": "npm test --prefix arabella-frontendd-main"
+    }
+}
