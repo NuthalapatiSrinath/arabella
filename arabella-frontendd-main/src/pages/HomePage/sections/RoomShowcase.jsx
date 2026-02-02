@@ -13,7 +13,7 @@ import {
   MapPin,
 } from "lucide-react";
 import styles from "./RoomShowcase.module.css";
-import { roomService } from "../../../services/room.service";
+// import { roomService } from "../../../services/room.service";
 import { roomSliderImages } from "./roomSliderImages";
 // ...imports above...
 // Place RoomCardWithSlider after all imports
@@ -130,7 +130,7 @@ const getAmenityIcon = (amenity) => {
 
 const RoomShowcase = () => {
   const sliderRef = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // ---------- Cache-first load (Unused) ----------
   // const cachedRooms = roomService.getCachedSearch({});
