@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "start": "npm start --prefix arabella-frontendd-main",
-        "build": "npm install --prefix arabella-frontendd-main && npm run build --prefix arabella-frontendd-main",
+        "build": "npm install --prefix arabella-frontendd-main && npm run build --prefix arabella-frontendd-main && npx -y shx rm -rf public && npx -y shx mv arabella-frontendd-main/build public",
         "test": "npm test --prefix arabella-frontendd-main"
     }
 }
