@@ -87,9 +87,14 @@ const RoomList = ({ isHomePreview = false }) => {
               </span>
             </div>
 
-            <Link to="/rooms" className={styles.bookLink}>
+            <a
+              href="https://book-directonline.com/properties/southtweedmidirect"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.bookLink}
+            >
               View Details <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
         </motion.div>
       ))}

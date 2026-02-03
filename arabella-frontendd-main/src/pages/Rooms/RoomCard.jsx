@@ -43,9 +43,8 @@ const RoomCard = ({ room, isSearched, searchData }) => {
     const bestRate = room.rateOptions[0]; // Assuming first is best/default
 
     displayPrice = bestRate.totalPrice; // e.g. 4700
-    priceLabel = `total for ${searchData.nights} night${
-      searchData.nights > 1 ? "s" : ""
-    }`;
+    priceLabel = `total for ${searchData.nights} night${searchData.nights > 1 ? "s" : ""
+      }`;
 
     // Check if original price exists and is higher (for strike-through)
     if (
@@ -94,9 +93,8 @@ const RoomCard = ({ room, isSearched, searchData }) => {
               {images.map((_, idx) => (
                 <span
                   key={idx}
-                  className={`${styles.dot} ${
-                    idx === currentImgIndex ? styles.activeDot : ""
-                  }`}
+                  className={`${styles.dot} ${idx === currentImgIndex ? styles.activeDot : ""
+                    }`}
                 />
               ))}
             </div>
@@ -168,22 +166,24 @@ const RoomCard = ({ room, isSearched, searchData }) => {
           </p>
 
           <div className={styles.btnRow}>
-            <Link
-              to={`/rooms/${room._id}`}
-              state={{ searchParams: searchData, isSearched: isSearched }}
+            <a
+              href="https://book-directonline.com/properties/southtweedmidirect"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.outlineBtn}
             >
               MORE INFO
-            </Link>
+            </a>
 
             {isSearched && (
-              <Link
-                to={`/rooms/${room._id}`}
-                state={{ searchParams: searchData, isSearched: isSearched }}
+              <a
+                href="https://book-directonline.com/properties/southtweedmidirect"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.chooseBtn}
               >
                 CHOOSE <ChevronDown size={14} />
-              </Link>
+              </a>
             )}
           </div>
         </div>

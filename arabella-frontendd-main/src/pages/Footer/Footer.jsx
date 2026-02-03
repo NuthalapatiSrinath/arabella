@@ -57,7 +57,7 @@ const Footer = () => {
                 <Link to="/about">About Us</Link>
               </li>
               <li>
-                <Link to="/rooms">Accommodation</Link>
+                <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noopener noreferrer">Accommodation</a>
               </li>
               <li>
                 <Link to="/gallery">Gallery</Link>
@@ -82,7 +82,7 @@ const Footer = () => {
                 <Link to="/faq">Guest FAQ</Link>
               </li>
               <li>
-                <Link to="/">Book a Stay</Link>
+                <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noopener noreferrer">Book a Stay</a>
               </li>
             </ul>
           </div>
@@ -92,16 +92,16 @@ const Footer = () => {
             <h3 className={styles.heading}>Our Rooms</h3>
             <ul className={styles.list}>
               <li>
-                <Link to="/rooms">Queen Room</Link>
+                <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noopener noreferrer">Queen Room</a>
               </li>
               <li>
-                <Link to="/rooms">Deluxe Room</Link>
+                <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noopener noreferrer">Deluxe Room</a>
               </li>
               <li>
-                <Link to="/rooms">Deluxe Twin</Link>
+                <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noopener noreferrer">Deluxe Twin</a>
               </li>
               <li>
-                <Link to="/rooms">Deluxe Studio</Link>
+                <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noopener noreferrer">Deluxe Studio</a>
               </li>
             </ul>
           </div>
