@@ -130,7 +130,7 @@ const HowToReach = () => {
             transition={{ delay: 0.2 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80"
+              src="/images/arabella.jpg"
               alt="Transport Location"
               className={styles.locationImg}
             />

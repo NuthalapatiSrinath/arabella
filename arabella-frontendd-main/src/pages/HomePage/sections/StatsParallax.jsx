@@ -3,7 +3,13 @@ import styles from "../HomePage.module.css";
 
 const StatsParallax = () => {
   return (
-    <div className={styles.parallaxSection}>
+    <div
+      className={styles.parallaxSection}
+      style={{
+        backgroundImage:
+          'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/ARB. 7.jpg")',
+      }}
+    >
       <div className={styles.parallaxContent}>
         <h2>Why Choose Arabella?</h2>
         <div className={styles.statsRow}>

@@ -10,6 +10,7 @@ const ContactUs = () => {
       {/* --- HERO SECTION (Updated to match Gallery style) --- */}
       <motion.div
         className={styles.heroSection}
+        style={{ backgroundImage: 'url("/images/ARB. 7.jpg")' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

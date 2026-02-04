@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import framer-motion
 import styles from "./AboutUs.module.css";
-import SignatureDining from "./SignatureDining";
 import ExperienceLeanLuxe from "./ExperienceLeanLuxe";
 
 const AboutUs = () => {
@@ -10,6 +9,7 @@ const AboutUs = () => {
       {/* --- NEW HERO SECTION (Matches Gallery/Contact Style) --- */}
       <motion.div
         className={styles.heroSection}
+        style={{ backgroundImage: 'url("/images/arabella-motor-inn.jpg")' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -150,7 +150,7 @@ const AboutUs = () => {
       </section>
 
       {/* NEW SECTIONS */}
-      <SignatureDining />
+     
       <ExperienceLeanLuxe />
     </div>
   );

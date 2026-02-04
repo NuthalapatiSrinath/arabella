@@ -5,172 +5,69 @@ import styles from "./Gallery.module.css";
 
 // --- Expanded Mock Data (26 Images) ---
 const galleryImages = [
-  // --- ROOMS ---
   {
     id: 1,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80",
-    title: "Deluxe Room",
+    src: "/images/arabella-motor-inn.jpg",
+    title: "Arabella Motor Inn",
   },
   {
     id: 2,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
-    title: "Deluxe Ocean View",
+    src: "/images/Arb. 1.jpg",
+    title: "Swimming Pool",
   },
   {
     id: 3,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80",
-    title: "Family Interconnecting Room",
+    src: "/images/ARB. 2.jpg",
+    title: "Guest Room",
   },
   {
     id: 4,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-    title: "Executive Suite Living Area",
+    src: "/images/ARB. 3.jpg",
+    title: "side View",
   },
   {
     id: 5,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80",
-    title: "Modern Twin Room",
+    src: "/images/Arb. 4.jpg",
+    title: "Parking View",
   },
   {
     id: 6,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80",
-    title: "Suite Balcony View",
+    src: "/images/ARB. 5.jpg",
+    title: "Entering View",
   },
   {
     id: 7,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80",
-    title: "Premium Queen Room",
+    src: "/images/ARB. 6.jpg",
+    title: "Inside View",
   },
   {
     id: 8,
     category: "Rooms",
-    src: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
-    title: "Spa Bathroom Detail",
+    src: "/images/ARB. 7.jpg",
+    title: "Drone View",
   },
-
-  // --- DINING ---
-  //   {
-  //     id: 9,
-  //     category: "Dining",
-  //     src: "https://images.unsplash.com/photo-1514362545857-3bc16549766b?auto=format&fit=crop&w=800&q=80",
-  //     title: "The Arabella Bar",
-  //   },
+  {
+    id: 9,
+    category: "Rooms",
+    src: "/images/ARB. 9.jpg",
+    title: "Swimming Pool View",
+  },
   {
     id: 10,
-    category: "Dining",
-    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80",
-    title: "Signature Restaurant",
+    category: "Rooms",
+    src: "/images/ARB. 15.jpg",
+    title: "Beach View",
   },
-  //   {
-  //     id: 11,
-  //     category: "Dining",
-  //     src: "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?auto=format&fit=crop&w=800&q=80",
-  //     title: "Breakfast Spread",
-  //   },
-  {
-    id: 12,
-    category: "Dining",
-    src: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=800&q=80",
-    title: "Alfresco Dining Patio",
-  },
-  {
-    id: 13,
-    category: "Dining",
-    src: "https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=800&q=80",
-    title: "Gourmet Plating",
-  },
-  {
-    id: 14,
-    category: "Dining",
-    src: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80",
-    title: "Evening Cocktails",
-  },
-  //   {
-  //     id: 15,
-  //     category: "Dining",
-  //     src: "https://images.unsplash.com/photo-1525266343566-9919350c4223?auto=format&fit=crop&w=800&q=80",
-  //     title: "Private Dining Area",
-  //   },
-
-  // --- SURROUNDINGS ---
-  {
-    id: 16,
-    category: "Surroundings",
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-    title: "Hotel Exterior Dusk",
-  },
-  {
-    id: 17,
-    category: "Surroundings",
-    src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-    title: "Resort Poolside",
-  },
-  //   {
-  //     id: 18,
-  //     category: "Surroundings",
-  //     src: "https://images.unsplash.com/photo-1572331165267-854da2b00ca1?auto=format&fit=crop&w=800&q=80",
-  //     title: "Infinity Pool View",
-  //   },
-  //   {
-  //     id: 19,
-  //     category: "Surroundings",
-  //     src: "https://images.unsplash.com/photo-1596178065887-1198b6148b2c?auto=format&fit=crop&w=800&q=80",
-  //     title: "Lobby Entrance",
-  //   },
-  {
-    id: 20,
-    category: "Surroundings",
-    src: "https://images.unsplash.com/photo-1535827841776-24afc1e255ac?auto=format&fit=crop&w=800&q=80",
-    title: "Lush Garden Pathways",
-  },
-  {
-    id: 21,
-    category: "Surroundings",
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    title: "Nearby Coastal Beach",
-  },
-
-  // --- EVENTS ---
-  {
-    id: 22,
-    category: "Events",
-    src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80",
-    title: "Grand Banquet Hall",
-  },
-  {
-    id: 23,
-    category: "Events",
-    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80",
-    title: "Wedding Aisle Setup",
-  },
-  //   {
-  //     id: 24,
-  //     category: "Events",
-  //     src: "https://images.unsplash.com/photo-1505373877841-8d13f5d6681f?auto=format&fit=crop&w=800&q=80",
-  //     title: "Corporate Meeting Room",
-  //   },
-  //   {
-  //     id: 25,
-  //     category: "Events",
-  //     src: "https://images.unsplash.com/photo-1469371670807-013ccf25f164?auto=format&fit=crop&w=800&q=80",
-  //     title: "Outdoor Event Lawn",
-  //   },
-  //   {
-  //     id: 26,
-  //     category: "Events",
-  //     src: "https://images.unsplash.com/photo-1551810335-81e029433608?auto=format&fit=crop&w=800&q=80",
-  //     title: "Conference Setup",
-  //   },
 ];
 
-const categories = ["All", "Rooms", "Dining", "Events", "Surroundings"];
+const categories = ["All", "Rooms"];
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -187,6 +84,7 @@ const Gallery = () => {
       {/* --- HERO HEADER --- */}
       <motion.div
         className={styles.heroSection}
+        style={{ backgroundImage: 'url("/images/Arb. 1.jpg")' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -215,9 +113,8 @@ const Gallery = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`${styles.filterBtn} ${
-                activeCategory === cat ? styles.activeBtn : ""
-              }`}
+              className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeBtn : ""
+                }`}
               onClick={() => setActiveCategory(cat)}
             >
               {cat}

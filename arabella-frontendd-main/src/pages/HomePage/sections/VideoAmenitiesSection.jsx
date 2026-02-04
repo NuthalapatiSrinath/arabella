@@ -2,52 +2,50 @@ import React from "react";
 import styles from "../HomePage.module.css";
 
 // Data with your local file paths
-const videoItems = [
+const amenityItems = [
   {
     id: 1,
-    title: "Lean Luxe",
-    desc: "Experience minimalist luxury designed for the modern traveler.",
-    videoSrc: "/videos/dining.mp4",
+    title: "Comfortable Rooms",
+    desc: "Spacious, clean, and well-maintained rooms designed for a relaxing stay, whether you’re travelling for business or leisure.",
+    imageSrc: "/images/Comfortable Rooms.webp",
   },
   {
     id: 2,
-    title: "Vibrant Spaces",
-    desc: "Socialize and relax in our artistically designed common areas.",
-    videoSrc: "/videos/wellness.mp4",
+    title: "Convenient Location",
+    desc: "Located close to major highways, shopping areas, and local attractions—making it easy to explore the city or commute with ease.",
+    imageSrc: "/images/convenience loaction.webp",
   },
   {
     id: 3,
-    title: "All Day Dining",
-    desc: "Savor a variety of delicious cuisines served fresh any time.",
-    videoSrc: "/videos/rooms.mp4",
+    title: "Free Parking",
+    desc: "Enjoy hassle-free travel with secure, free parking available right outside your room—perfect for road trips and long stays.",
+    imageSrc: "/images/free parking.webp",
   },
   {
     id: 4,
-    title: "High Energy",
-    desc: "Intuitive service meets a high-energy atmosphere.",
-    videoSrc: "/videos/events.mp4",
+    title: "High-Speed Wi-Fi",
+    desc: "Stay connected with fast and reliable Wi-Fi throughout the property—ideal for work, streaming, and staying in touch.",
+    imageSrc: "/images/high speed wifi .webp",
   },
   {
     id: 5,
-    title: "Wellness",
-    desc: "Rejuvenate your senses at our world-class spa facility.",
-    videoSrc: "/videos/pool.mp4",
+    title: "Friendly Service",
+    desc: "Our friendly staff are always ready to help, ensuring a comfortable, smooth, and memorable stay for every guest.",
+    imageSrc: "/images/friendly service .webp",
   },
 ];
 
-// Single Item Component (Auto-playing vertical pill)
+// Single Item Component (Pill with description)
 const AmenityPill = ({ item }) => {
   return (
     <div className={styles.amenityWrapper}>
       {/* The Vertical Pill Shape */}
       <div className={styles.mediaShape}>
-        <video
+        <img
           className={styles.amenityVideo}
-          src={item.videoSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
+          src={item.imageSrc}
+          alt={item.title}
+          loading="lazy"
         />
       </div>
 
@@ -77,7 +75,7 @@ const VideoAmenitiesSection = () => {
 
       {/* The Row of Pills */}
       <div className={styles.amenitiesRow}>
-        {videoItems.map((item) => (
+        {amenityItems.map((item) => (
           <AmenityPill key={item.id} item={item} />
         ))}
       </div>

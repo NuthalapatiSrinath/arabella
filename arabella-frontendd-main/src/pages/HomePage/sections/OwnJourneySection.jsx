@@ -519,12 +519,12 @@ const OwnJourneySection = () => {
         {/* ... Images and text content remain same ... */}
         <div className={styles.collageWrapper}>
           <img
-            src="https://images.unsplash.com/photo-1570213489059-0aac6626cade?auto=format&fit=crop&w=600&q=80"
+            src="/images/arabella.jpg"
             alt="Dining"
             className={styles.largeImg}
           />
           <img
-            src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=600&q=80"
+            src="/images/ARB. 3.jpg"
             alt="View"
             className={styles.smallImg}
           />

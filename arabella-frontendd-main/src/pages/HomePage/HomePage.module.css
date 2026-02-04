@@ -42,7 +42,8 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* Makes text readable */
+  background: rgba(0, 0, 0, 0.35);
+  /* Makes text readable */
   z-index: 1;
 }
 
@@ -59,7 +60,8 @@
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: #facc15; /* Gold */
+  color: #facc15;
+  /* Gold */
   font-weight: 600;
 }
 
@@ -171,19 +173,23 @@
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
 /* --- Main Container --- */
 .roomShowcase {
   display: flex;
   align-items: center;
-  padding: 80px 0 80px 5%; /* Left padding creates the "offset" look */
+  padding: 80px 0 80px 5%;
+  /* Left padding creates the "offset" look */
   background-color: var(--White_Color);
   gap: 60px;
-  overflow: hidden; /* Prevents horizontal scroll on the main page */
+  overflow: hidden;
+  /* Prevents horizontal scroll on the main page */
 }
 
 /* --- Left Text Column --- */
 .leftTextCol {
-  flex: 0 0 300px; /* Fixed width for the text intro */
+  flex: 0 0 300px;
+  /* Fixed width for the text intro */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -212,7 +218,8 @@
 .leftDesc {
   font-family: var(--Font_Family);
   font-size: 15px;
-  color: #666; /* Gray Text */
+  color: #666;
+  /* Gray Text */
   line-height: 1.6;
 }
 
@@ -236,15 +243,18 @@
 
 /* --- Slider Container --- */
 .sliderContainer {
-  flex: 1; /* Takes remaining width */
+  flex: 1;
+  /* Takes remaining width */
   position: relative;
-  min-width: 0; /* Critical flexbox fix for sliders */
+  min-width: 0;
+  /* Critical flexbox fix for sliders */
 }
 
 /* --- Navigation Buttons (Desktop) --- */
 .navBtn {
   position: absolute;
-  top: -60px; /* Place them above the slider */
+  top: -60px;
+  /* Place them above the slider */
   right: 5%;
   width: 44px;
   height: 44px;
@@ -262,7 +272,9 @@
 
 .prevBtn {
   right: 80px;
-} /* Position relative to next button */
+}
+
+/* Position relative to next button */
 .nextBtn {
   right: 20px;
 }
@@ -279,20 +291,27 @@
   gap: 30px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 20px; /* Space for shadow */
-  padding-right: 50px; /* Space at the end */
+  padding-bottom: 20px;
+  /* Space for shadow */
+  padding-right: 50px;
+  /* Space at the end */
 
   /* Hide Scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE */
 }
+
 .cardStrip::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
+  /* Chrome/Safari */
 }
 
 /* --- Hotel Card --- */
 .hotelCard {
-  flex: 0 0 380px; /* Fixed width on Desktop */
+  flex: 0 0 380px;
+  /* Fixed width on Desktop */
   background: white;
   border: 1px solid #eee;
   border-radius: 0;
@@ -405,7 +424,8 @@
 /* Tablet & Mobile (max-width: 1024px) */
 @media (max-width: 1024px) {
   .roomShowcase {
-    flex-direction: column; /* Stack Top to Bottom */
+    flex-direction: column;
+    /* Stack Top to Bottom */
     align-items: flex-start;
     padding: 60px 0;
     gap: 40px;
@@ -426,7 +446,8 @@
   /* 1. RESET Slider Container Padding */
   .sliderContainer {
     width: 100%;
-    padding: 0; /* Remove padding here, we add it to the strip */
+    padding: 0;
+    /* Remove padding here, we add it to the strip */
   }
 
   /* Hide custom nav buttons on mobile */
@@ -437,7 +458,8 @@
   /* 2. ADJUST the Scroll Strip */
   .cardStrip {
     display: flex;
-    gap: 15px; /* Smaller gap between cards */
+    gap: 15px;
+    /* Smaller gap between cards */
     overflow-x: auto;
 
     /* Enable Snap Scrolling */
@@ -459,13 +481,15 @@
     /* Snap to the LEFT (Start) instead of Center */
     scroll-snap-align: start;
 
-    margin-right: 0; /* Gap is handled by .cardStrip gap */
+    margin-right: 0;
+    /* Gap is handled by .cardStrip gap */
   }
 
   .cardImage {
     height: 200px;
   }
 }
+
 /* --- Parallax Section (Desktop/Tablet default) --- */
 .parallaxSection {
   /* Dark overlay + Image */
@@ -496,7 +520,8 @@
 }
 
 .parallaxContent h2 {
-  font-family: var(--Font_Brand); /* Serif */
+  font-family: var(--Font_Brand);
+  /* Serif */
   font-size: 42px;
   font-weight: 400;
   margin: 0;
@@ -531,7 +556,8 @@
 }
 
 .number {
-  font-family: var(--Font_Brand); /* Serif */
+  font-family: var(--Font_Brand);
+  /* Serif */
   font-size: 56px;
   font-weight: 700;
   color: var(--Primary_Color);
@@ -539,7 +565,8 @@
 }
 
 .label {
-  font-family: var(--Font_Family); /* Sans Serif */
+  font-family: var(--Font_Family);
+  /* Sans Serif */
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -576,11 +603,9 @@
     padding: 60px 0;
 
     /* CHANGE: Remove image URL, show only a dark gradient */
-    background-image: linear-gradient(
-      135deg,
-      var(--Black_Color) 0%,
-      #2a2a2a 100%
-    );
+    background-image: linear-gradient(135deg,
+        var(--Black_Color) 0%,
+        #2a2a2a 100%);
 
     /* Reset background props so they don't conflict */
     background-attachment: scroll;
@@ -659,6 +684,7 @@
   .heroContent h1 {
     font-size: 3.5rem;
   }
+
   .statsRow {
     gap: 50px;
   }
@@ -668,17 +694,21 @@
   .heroContent h1 {
     font-size: 2.8rem;
   }
+
   .heroContent p {
     font-size: 1.1rem;
   }
+
   .sectionHeader h2 {
     font-size: 2.2rem;
   }
+
   .statsRow {
     flex-direction: column;
     gap: 40px;
   }
 }
+
 /* --- AMENITIES / EXPERIENCES SECTION --- */
 .videoAmenitiesSection {
   padding: 80px 4%;
@@ -705,7 +735,8 @@
 .playText {
   display: block;
   font-weight: 300;
-  color: #c5a059; /* Gold */
+  color: #c5a059;
+  /* Gold */
 }
 
 .amenitiesSub {
@@ -725,6 +756,7 @@
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 .exploreBtn:hover {
   transform: scale(1.05);
 }
@@ -743,23 +775,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 220px; /* Fixed width */
+  width: 220px;
+  /* Fixed width */
   transition: transform 0.3s ease;
 }
 
 .amenityWrapper:hover {
-  transform: translateY(-10px); /* Slight float up on hover */
+  transform: translateY(-10px);
+  /* Slight float up on hover */
 }
 
 /* Vertical Pill Shape */
 .mediaShape {
   width: 220px;
-  height: 320px; /* Tall vertical rectangle */
-  border-radius: 110px; /* Fully rounded ends (half of width) */
+  height: 320px;
+  /* Tall vertical rectangle */
+  border-radius: 110px;
+  /* Fully rounded ends (half of width) */
   overflow: hidden;
   position: relative;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  border: 4px solid white; /* Optional white border */
+  border: 4px solid white;
+  /* Optional white border */
   margin-bottom: 20px;
 }
 
@@ -779,7 +816,8 @@
 .itemTitle {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #c5a059; /* Gold Title */
+  color: #c5a059;
+  /* Gold Title */
   margin-bottom: 8px;
   text-transform: capitalize;
 }
@@ -795,9 +833,11 @@
   .amenitiesRow {
     gap: 15px;
   }
+
   .amenityWrapper {
     width: 180px;
   }
+
   .mediaShape {
     width: 180px;
     height: 260px;
@@ -806,18 +846,23 @@
 }
 
 @media (max-width: 768px) {
+
   /* Horizontal Scroll on mobile */
   .amenitiesRow {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
     padding-bottom: 20px;
-    padding-left: 20px; /* Add padding for scroll start */
+    padding-left: 20px;
+    /* Add padding for scroll start */
   }
+
   .amenityWrapper {
     flex-shrink: 0;
   }
-} /* src/pages/HomePage/sections/RoomShowcase.module.css */
+}
+
+/* src/pages/HomePage/sections/RoomShowcase.module.css */
 
 /* --- NEW ARRIVALS / ROOM SHOWCASE --- */
 .roomShowcase {
@@ -899,14 +944,17 @@
   z-index: 10;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .navBtn:hover {
   background: #4a148c;
   color: white;
   border-color: #4a148c;
 }
+
 .prevBtn {
   left: -25px;
 }
+
 .nextBtn {
   right: -25px;
 }
@@ -918,9 +966,12 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 20px 5px;
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 .cardStrip::-webkit-scrollbar {
   display: none;
 }
@@ -935,6 +986,7 @@
   flex-direction: column;
   transition: transform 0.3s;
 }
+
 .hotelCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -986,6 +1038,7 @@
   font-size: 0.85rem;
   color: #555;
 }
+
 .amenityItem {
   display: flex;
   align-items: center;
@@ -1021,6 +1074,7 @@
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .bookBtn:hover {
   background: #4a148c;
   color: white;
@@ -1032,23 +1086,29 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .leftTextCol {
     width: 100%;
     margin-bottom: 30px;
   }
+
   .sliderContainer {
     width: 100%;
   }
+
   .bigHeadline {
     font-size: 4rem;
   }
+
   .bigHeadline span {
     font-size: 6rem;
   }
 }
+
 /* --- OWN YOUR JOURNEY SECTION --- */
 .journeySection {
-  background-color: #fcf8f5; /* Light beige/pinkish bg from image */
+  background-color: #fcf8f5;
+  /* Light beige/pinkish bg from image */
   font-family: "Inter", sans-serif;
   padding-bottom: 80px;
   overflow: hidden;
@@ -1068,9 +1128,11 @@
 }
 
 .nextStayTitle {
-  font-family: "Oswald", sans-serif; /* Condensed font */
+  font-family: "Oswald", sans-serif;
+  /* Condensed font */
   font-size: 2.5rem;
-  color: #5e35b1; /* Medium Purple */
+  color: #5e35b1;
+  /* Medium Purple */
   text-transform: uppercase;
   margin-right: 20px;
   font-weight: 700;
@@ -1112,7 +1174,8 @@
 }
 
 .searchBtn {
-  background-color: #4527a0; /* Deep Purple */
+  background-color: #4527a0;
+  /* Deep Purple */
   color: white;
   border: none;
   padding: 12px 30px;
@@ -1149,7 +1212,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  border: 10px solid rgba(255, 255, 255, 0.6); /* Semi-transparent border */
+  border: 10px solid rgba(255, 255, 255, 0.6);
+  /* Semi-transparent border */
   z-index: 1;
 }
 
@@ -1158,8 +1222,10 @@
   height: 340px;
   object-fit: cover;
   position: absolute;
-  left: 260px; /* Offset to right */
-  top: 80px; /* Offset down */
+  left: 260px;
+  /* Offset to right */
+  top: 80px;
+  /* Offset down */
   border: 10px solid white;
   z-index: 2;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -1176,14 +1242,16 @@
   font-size: 4rem;
   line-height: 0.95;
   text-transform: uppercase;
-  color: #7e57c2; /* Lighter Purple */
+  color: #7e57c2;
+  /* Lighter Purple */
   margin-bottom: 25px;
   font-weight: 700;
 }
 
 .journeyHeadline span {
   display: block;
-  color: #4527a0; /* Deep Purple */
+  color: #4527a0;
+  /* Deep Purple */
 }
 
 .journeyDesc {
@@ -1210,14 +1278,17 @@
   .journeyContent {
     flex-direction: column;
   }
+
   .collageWrapper {
     width: 100%;
     justify-content: center;
     margin-bottom: 50px;
   }
+
   .largeImg {
     left: 10%;
   }
+
   .smallImg {
     left: 40%;
   }
@@ -1228,9 +1299,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .nextStayTitle {
     font-size: 2rem;
   }
+
   .journeyHeadline {
     font-size: 3rem;
   }
@@ -1240,6 +1313,7 @@
     height: auto;
     display: block;
   }
+
   .largeImg,
   .smallImg {
     position: relative;
@@ -1249,6 +1323,7 @@
     margin-bottom: 20px;
   }
 }
+
 /* --- EXISTING STYLES (Keep the journeySection, journeyTopBar, etc.) --- */
 
 /* ... (keep your existing .journeySection styles) ... */
@@ -1256,13 +1331,15 @@
 /* --- ADD THESE NEW STYLES FOR THE POPUPS --- */
 
 .searchInputs {
-  position: relative; /* Anchor for popups */
+  position: relative;
+  /* Anchor for popups */
 }
 
 /* Common Popup Container */
 .popupContainer {
   position: absolute;
-  top: 100%; /* Below the input */
+  top: 100%;
+  /* Below the input */
   left: 0;
   background: white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -1276,13 +1353,15 @@
 
 /* Specific Positioning */
 .calendarPopup {
-  left: 160px; /* Align near Check In */
+  left: 160px;
+  /* Align near Check In */
   width: 320px;
 }
 
 .guestPopup {
   right: 0;
-  left: auto; /* Align near Right side */
+  left: auto;
+  /* Align near Right side */
   width: 300px;
 }
 
@@ -1295,6 +1374,7 @@
   font-weight: 700;
   color: #333;
 }
+
 .calNavBtn {
   background: none;
   border: none;
@@ -1309,6 +1389,7 @@
   text-align: center;
   font-size: 0.85rem;
 }
+
 .calDayName {
   color: #999;
   font-size: 0.75rem;
@@ -1323,21 +1404,26 @@
   cursor: pointer;
   border-radius: 4px;
 }
+
 .calDay:hover:not(.disabled) {
   background: #f0f0f0;
 }
+
 .calSelected {
   background: #5e35b1;
   color: white;
 }
+
 .calRange {
   background: #d1c4e9;
   color: #333;
 }
+
 .calDisabled {
   color: #ccc;
   cursor: default;
 }
+
 .calEmpty {
   pointer-events: none;
 }
@@ -1350,11 +1436,13 @@
   padding: 10px 0;
   border-bottom: 1px solid #f0f0f0;
 }
+
 .guestLabel {
   font-size: 0.9rem;
   font-weight: 600;
   color: #333;
 }
+
 .guestControls {
   display: flex;
   align-items: center;
@@ -1373,9 +1461,11 @@
   justify-content: center;
   color: #555;
 }
+
 .guestBtn:hover {
   background: #ddd;
 }
+
 /* Add to HomePage.module.css */
 
 /* Fix positioning anchor */
@@ -1393,7 +1483,8 @@
 /* Stay Duration Popup (Mini popup inside calendar) */
 .stayPopup {
   position: absolute;
-  top: 50%; /* Center over the date */
+  top: 50%;
+  /* Center over the date */
   left: 50%;
   transform: translate(-50%, -10px);
   background: white;
@@ -1443,6 +1534,7 @@
   justify-content: center;
   gap: 4px;
 }
+
 /* HomePage.module.css */
 
 .hero {
@@ -1490,7 +1582,8 @@
   text-align: center;
   color: white;
   margin-top: 0;
-  overflow: hidden; /* Crucial: This clips the extra video part */
+  overflow: hidden;
+  /* Crucial: This clips the extra video part */
 }
 
 .heroVideo {

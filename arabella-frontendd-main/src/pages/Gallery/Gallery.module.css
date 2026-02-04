@@ -9,8 +9,8 @@
 
 /* --- Hero Section --- */
 .heroSection {
-  height: 60vh; /* Large banner height */
-  background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80");
+  height: 60vh;
+  /* Large banner height banner height */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -23,7 +23,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark overlay for text readability */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +118,8 @@
 
 /* Hover Effects */
 .imageCard:hover .imgWrapper img {
-  transform: scale(1.1); /* Zoom in effect */
+  transform: scale(1.1);
+  /* Zoom in effect */
 }
 
 .overlay {
@@ -214,7 +216,8 @@
   }
 
   .galleryGrid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
+    /* Single column on mobile */
   }
 
   .imgWrapper {

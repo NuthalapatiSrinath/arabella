@@ -143,7 +143,7 @@ const RoomShowcase = () => {
       description:
         "Standard queen room ,Air conditioned/heating,Microwave,Toaster,BAr Fridge,Tea&Coffee Facilites,Fresh milk,Dairy room service,...",
       images: [roomSliderImages[0] || "https://via.placeholder.com/400"],
-      amenities: ["Wifi", "Parking", "Tea&Coffee", "Non-Smoking"],
+      amenities: ["Wifi", "Parking", "Swimming Pool", "Non-Smoking",],
     },
     {
       _id: "deluxe-room",
@@ -151,15 +151,31 @@ const RoomShowcase = () => {
       description:
         "Our Deluxe Room offers Air conditioned/heating,Microwave,Toaster,BAr Fridge,Tea&Coffee Facilites,Fresh milk,Dairy room service,... ",
       images: [roomSliderImages[1] || "https://via.placeholder.com/400"],
-      amenities: ["Wifi", "Parking", "Tea&Coffee", "Non-Smoking"],
+      amenities: ["Wifi", "Parking", "Swimming Pool", "Non-Smoking",],
     },
-    {
+     {
       _id: "deluxe-twin",
       name: "Deluxe Twin",
       description:
-        "Standard Twin Room, One Queen Bed and One Single Bed,Air conditioned/heating, Microwave, Toaster, Bar fridge, Tea & Coffee Facilities, Fresh Milk, Daily room service, Free Wi-FiPlates, Bowls & Cutlery are available, please see reception",
+        "Standard Twin Room, One Queen Bed and One Single Bed,Air conditioned/heating, Microwave, Toaster, Bar fridge, Tea & Coffee Facilities, Fresh Milk, Daily room service, Free Wi-Fi,Plates, Bowls & Cutlery are available, please see reception",
       images: [roomSliderImages[2] || "https://via.placeholder.com/400"],
-      amenities: ["Wifi", "Parking", "Tea&Coffee", "Non-Smoking"],
+      amenities: ["Wifi", "Parking", "Swimming Pool", "Non-Smoking",],
+    },
+    {
+      _id: "family-room",
+      name: "Family Room (sleeps 4)",
+      description:
+        "Standard Family room sleeps 5. Double bed, 1 single, 1x set of bunk beds. Air conditioned/heating, Microwave, Toaster, Bar fridge, Tea & Coffee Facilities, Fresh Milk, Daily room service, Free Wi-Fi,Plates, Bowls & Cutlery are available, please see reception ",
+      images: [roomSliderImages[1] || "https://via.placeholder.com/400"],
+      amenities: ["Wifi", "Parking", "Swimming Pool", "Non-Smoking",],
+    },
+    {
+      _id: "family-room-2",
+      name: "Family Room (sleeps 2)",
+      description:
+        "Standard Family room sleeps 4. Double bed, 2 single beds. Air conditioned/heating, Microwave, Toaster, Bar fridge, Tea & Coffee Facilities, Fresh Milk, Daily room service, Free Wi-Fi,Plates, Bowls & Cutlery are available, please see reception",
+      images: [roomSliderImages[2] || "https://via.placeholder.com/400"],
+      amenities: ["Wifi", "Parking", "Swimming Pool", "Non-Smoking",],
     },
   ]);
   const [loading] = useState(false);
@@ -209,25 +225,6 @@ const RoomShowcase = () => {
 
   return (
     <div className={styles.roomShowcase}>
-      {/* LEFT CONTENT */}
-      <div className={styles.leftTextCol}>
-        <h2 className={styles.bigHeadline}>
-          ALL THAT'S <span>NEW!</span>
-        </h2>
-        <p className={styles.leftDesc}>
-          These newly-opened suites bring in a fresh burst of energy and luxury
-          to your favorite destinations.
-        </p>
-        <a
-          href="https://book-directonline.com/properties/southtweedmidirect"
-          className={styles.readMoreLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          VIEW ALL <ChevronDown size={16} />
-        </a>
-      </div>
-
       {/* RIGHT SLIDER */}
       <div className={styles.sliderContainer}>
         <button
