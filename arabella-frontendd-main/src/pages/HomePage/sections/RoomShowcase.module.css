@@ -232,8 +232,8 @@
 .bookBtn {
   padding: 10px 25px;
   border: 1px solid #4a148c;
-  color: #4a148c;
-  background: transparent;
+  color: white;
+  background: #4a148c;
   border-radius: 25px;
   font-weight: 700;
   font-size: 0.8rem;
@@ -241,8 +241,8 @@
   transition: all 0.3s;
 }
 .bookBtn:hover {
-  background: #4a148c;
-  color: white;
+  background: white;
+  color:  #4a148c;
 }
 
 /* Responsive */

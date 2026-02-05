@@ -1,231 +1,327 @@
-/* AboutUs.module.css */
-
 .pageContainer {
   width: 100%;
-  font-family: var(--Font_Family, sans-serif);
-  color: #333;
-  /* Removed top padding so Hero hits the top */
-  padding: 0;
-  background-color: #fff;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Outfit', sans-serif;
 }
 
-/* --- NEW HERO SECTION STYLES --- */
-.heroSection {
-  height: 60vh;
-  /* Elegant background image */
+/* SECTION 1: Our Story (2-Row Layout) */
+.storySection {
+  background-color: #ede9e1;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.storyTopRow {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.entranceCircle {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.entranceCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mainTitleText {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.5rem;
+  color: #a0522d;
+  /* Warmer rust Brown per reference */
+  line-height: 1.05;
+  font-weight: 500;
+  max-width: 700px;
+  letter-spacing: -1.5px;
+}
+
+.storyBottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Align text to top of statue image per Step 629 */
+  gap: 120px;
+  margin-top: 40px;
+}
+
+.storyTextContent {
+  flex: 1.5;
+  max-width: 650px;
+}
+
+.storyHeaderSmall {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.8rem;
+  /* Larger bold header per Step 629 */
+  color: #a0522d;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+.storyDescriptionFull {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+.storyStatueWrapper {
+  flex-shrink: 0;
+}
+
+.statueImgFixed {
+  width: 500px;
+  /* Increased size per user request */
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  /* Helps remove white/light background from non-transparent images */
+  transition: transform 0.3s ease;
+}
+
+.statueImgFixed:hover {
+  transform: scale(1.02);
+}
+
+/* SECTION 2: Hero Section (Modern Comfort) */
+.charmHero {
+  height: 90vh;
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-bottom: 80px;
-  /* Space before content starts */
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 100px;
+  padding-left: 10%;
 }
 
-.heroOverlay {
+.charmHero::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  /* Dark overlay */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
 }
 
-.heroOverlay h1 {
-  font-family: "Times New Roman", serif;
-  font-size: 4rem;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-.heroOverlay p {
-  font-size: 1.2rem;
-  font-weight: 300;
-  letter-spacing: 1px;
+.charmText {
+  position: relative;
+  z-index: 2;
+  color: #fff;
   max-width: 600px;
 }
 
-/* --- EXISTING CONTENT STYLES (Adjusted margins) --- */
+.charmText h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
 
-.mainTitle {
-  font-family: "Anton", sans-serif;
-  font-size: 3rem;
-  color: #5e35b1;
+/* SECTION 3: Our Amenities */
+.amenitiesSection {
+  padding: 100px 10%;
   text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.mainDescription {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 20px auto;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  padding: 0 20px;
-}
-
-.readMoreBtn {
-  display: block;
-  margin: 0 auto 60px auto;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  font-size: 0.8rem;
-  color: #777;
-  padding-bottom: 2px;
-  cursor: pointer;
-  letter-spacing: 1px;
-  transition: all 0.2s;
-}
-
-.readMoreBtn:hover {
-  color: #5e35b1;
-  border-color: #5e35b1;
-}
-
-/* --- Grids --- */
-/* Added max-width container wrapper for content below hero */
-.gridThree,
-.imageGrid,
-.section {
-  max-width: 1200px;
+.amenitiesHeader {
+  margin-bottom: 80px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
 }
 
-.gridThree {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 50px;
+.amenitiesHeader h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #2d4133;
+  margin-bottom: 20px;
 }
 
-.textBlock {
-  padding: 0 10px;
-}
-
-.blockTitle {
-  font-size: 1.25rem;
-  color: #5e35b1;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-
-.blockText {
-  font-size: 0.95rem;
+.amenitiesHeader p {
+  font-size: 1.2rem;
   color: #666;
   line-height: 1.6;
-  font-weight: 300;
 }
 
-/* Image Collage */
-.imageGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  margin-bottom: 50px;
+.amenitiesGrid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 80px;
 }
 
-.imgWrapper {
-  width: 100%;
+.amenityCard {
+  flex: 1;
+  max-width: 300px;
+}
+
+.amenityCircle {
+  width: 250px;
   height: 250px;
+  border-radius: 50%;
   overflow: hidden;
+  margin: 0 auto 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-.gridImage {
+.amenityCircle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
 
-.imgWrapper:hover .gridImage {
-  transform: scale(1.05);
+.amenityCard:hover .amenityCircle img {
+  transform: scale(1.1);
 }
 
-/* Animations */
-.fadeIn {
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
+.amenityLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d4133;
 }
 
-.slideUp {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 1s ease-out forwards;
-  animation-delay: 0.3s;
+.amenityLabel svg {
+  color: #8b4513;
 }
 
-.delayAnimation {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 0.6s;
+.bookBtn {
+  display: inline-block;
+  background-color: #2d4133;
+  color: #fff;
+  padding: 18px 45px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(45, 65, 51, 0.2);
 }
 
-.delayMore {
-  animation-delay: 0.8s;
+.bookBtn:hover {
+  background-color: #1a2a20;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(45, 65, 51, 0.3);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* SECTION 4: Local Adventures (Staff) */
+.localAdventures {
+  display: flex;
+  background-color: #ede9e1;
+  /* Beige to match Section 1 */
+  min-height: 80vh;
+}
+
+.localTextWrapper {
+  flex: 1;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.localTextWrapper h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #2d4133;
+  margin-bottom: 25px;
+}
+
+.localTextWrapper p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 500px;
+}
+
+.localVisualWrapper {
+  flex: 1.2;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.localStaffCard {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+
+  .storySection,
+  .localAdventures {
+    flex-direction: column;
+    padding: 60px 5%;
   }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  .storyTopRow,
+  .storyBottomRow {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .mainTitleText {
+    font-size: 3.5rem;
+    max-width: 100%;
   }
-}
 
-/* Responsive */
-@media (max-width: 900px) {
-  .heroOverlay h1 {
+  .entranceCircle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .storyTextContent {
+    max-width: 100%;
+  }
+
+  .storyHeaderSmall {
     font-size: 3rem;
   }
 
-  .gridThree {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .imageGrid {
-    grid-template-columns: 1fr 1fr;
+  .statueImgFixed {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 600px) {
-  .heroSection {
-    height: 50vh;
+@media (max-width: 768px) {
+  .charmHero {
+    height: 60vh;
+    padding-left: 5%;
   }
 
-  .heroOverlay h1 {
+  .charmText h2 {
     font-size: 2.5rem;
   }
 
-  .imageGrid {
-    grid-template-columns: 1fr;
+  .storyHeaderSmall,
+  .amenitiesHeader h2 {
+    font-size: 2.5rem;
   }
 }

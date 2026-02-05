@@ -67,17 +67,13 @@ const galleryImages = [
   },
 ];
 
-const categories = ["All", "Rooms"];
+const categories = ["All GALLERY PHOTOS"];
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null); // For Lightbox
 
-  // Filter Logic
-  const filteredImages =
-    activeCategory === "All"
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeCategory);
+  // Show all images as the button is now static
+  const filteredImages = galleryImages;
 
   return (
     <div className={styles.pageWrapper}>
@@ -108,17 +104,16 @@ const Gallery = () => {
       </motion.div>
 
       <div className={styles.container}>
-        {/* --- FILTER TABS --- */}
+        {/* --- FILTER TABS (Static Label) --- */}
         <div className={styles.filterRow}>
           {categories.map((cat) => (
-            <button
+            <div
               key={cat}
-              className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeBtn : ""
-                }`}
-              onClick={() => setActiveCategory(cat)}
+              className={`${styles.filterBtn} ${styles.activeBtn}`}
+              style={{ cursor: "default" }}
             >
               {cat}
-            </button>
+            </div>
           ))}
         </div>
 

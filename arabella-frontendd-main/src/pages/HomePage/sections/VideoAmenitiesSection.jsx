@@ -7,31 +7,31 @@ const amenityItems = [
     id: 1,
     title: "Comfortable Rooms",
     desc: "Spacious, clean, and well-maintained rooms designed for a relaxing stay, whether you’re travelling for business or leisure.",
-    imageSrc: "/images/Comfortable Rooms.webp",
+    imageSrc: "/images/ARB. 2.jpg",
   },
   {
     id: 2,
     title: "Convenient Location",
     desc: "Located close to major highways, shopping areas, and local attractions—making it easy to explore the city or commute with ease.",
-    imageSrc: "/images/convenience loaction.webp",
+    imageSrc: "/images/ARB. 7.jpg",
   },
   {
     id: 3,
     title: "Free Parking",
     desc: "Enjoy hassle-free travel with secure, free parking available right outside your room—perfect for road trips and long stays.",
-    imageSrc: "/images/free parking.webp",
+    imageSrc: "/images/ARB. 4.jpg",
   },
   {
     id: 4,
     title: "High-Speed Wi-Fi",
     desc: "Stay connected with fast and reliable Wi-Fi throughout the property—ideal for work, streaming, and staying in touch.",
-    imageSrc: "/images/high speed wifi .webp",
+    imageSrc: "/images/ARB. 10.jpg",
   },
   {
     id: 5,
     title: "Friendly Service",
     desc: "Our friendly staff are always ready to help, ensuring a comfortable, smooth, and memorable stay for every guest.",
-    imageSrc: "/images/friendly service .webp",
+    imageSrc: "/images/ARB. 8.jpg",
   },
 ];
 

@@ -1,157 +1,163 @@
 import React from "react";
-import { motion } from "framer-motion"; // Import framer-motion
+import { motion } from "framer-motion";
+import { Wifi, Car, Coffee } from "lucide-react";
 import styles from "./AboutUs.module.css";
-import ExperienceLeanLuxe from "./ExperienceLeanLuxe";
 
 const AboutUs = () => {
   return (
     <div className={styles.pageContainer}>
-      {/* --- NEW HERO SECTION (Matches Gallery/Contact Style) --- */}
-      <motion.div
-        className={styles.heroSection}
-        style={{ backgroundImage: 'url("/images/arabella-motor-inn.jpg")' }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className={styles.heroOverlay}>
+
+      {/* SECTION 1: Our Story (2-Row Layout) */}
+      <section className={styles.storySection}>
+        {/* Row 1: Entrance Circle + Grand Title */}
+        <div className={styles.storyTopRow}>
+          <motion.div
+            className={styles.entranceCircle}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <img src="/images/ARB. 5.jpg" alt="Comfort" />
+          </motion.div>
           <motion.h1
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            className={styles.mainTitleText}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            ABOUT US
+            Experience <br />True Comfort
           </motion.h1>
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+        </div>
+
+        {/* Row 2: Our Story Text + Statue */}
+        <div className={styles.storyBottomRow}>
+          <motion.div
+            className={styles.storyTextContent}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            Discover the story of elegance, comfort, and hospitality at
-            Arabella.
-          </motion.p>
-        </div>
-      </motion.div>
+            <h2 className={styles.storyHeaderSmall}>Our Story</h2>
+            <p className={styles.storyDescriptionFull}>
+              Established as the landmark for travelers in Tweed Heads, Arabella Motor Inn was born from a passion for authentic hospitality. We've transformed every corner to ensure that your stay is not just a room, but a retreat. Nestled in a prime location, we boast the perfect blend of coastal charm and modern convenience.
+            </p>
+          </motion.div>
 
-      {/* --- ORIGINAL CONTENT BELOW --- */}
-
-      {/* HEADER SECTION (Our Culture) */}
-      <section className={`${styles.section} ${styles.fadeIn}`}>
-        <h1 className={styles.mainTitle}>OUR CULTURE</h1>
-        <p className={styles.mainDescription}>
-          Arabella is where creativity leads, agility drives and every
-          experience is charged with effortless charisma. A vibrant blend of
-          lifestyle and luxury.
-        </p>
-        <button className={styles.readMoreBtn}>READ MORE</button>
-      </section>
-
-      {/* TOP TEXT COLUMNS */}
-      <section className={`${styles.gridThree} ${styles.slideUp}`}>
-        <div className={styles.textBlock}>
-          <h3 className={styles.blockTitle}>Experience-driven</h3>
-          <p className={styles.blockText}>
-            From rooftop soirées and live performances to curated local tours,
-            each stay is designed to help you come alive.
-          </p>
-        </div>
-        <div className={styles.textBlock}>
-          <h3 className={styles.blockTitle}>Inclusive and Open</h3>
-          <p className={styles.blockText}>
-            Arabella thrives on diversity and inclusivity, welcoming guests from
-            all walks of life. Our culture fosters a sense of belonging, where
-            everyone is encouraged to be their authentic selves.
-          </p>
-        </div>
-        <div className={styles.textBlock}>
-          <h3 className={styles.blockTitle}>Cosmopolitan and Contemporary</h3>
-          <p className={styles.blockText}>
-            Arabella isn't just a place; it's a pulse, a vibrant rhythm that
-            resonates with a lifestyle on the go. Here, the ordinary fades away
-            and the extraordinary takes centre stage.
-          </p>
+          <motion.div
+            className={styles.storyStatueWrapper}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <img src="/images/buddhasstatus.png" className={styles.statueImgFixed} alt="Peaceful Details" />
+          </motion.div>
         </div>
       </section>
 
-      {/* IMAGE COLLAGE */}
-      <section className={`${styles.imageGrid} ${styles.delayAnimation}`}>
-        <div className={styles.imgWrapper}>
-          <img
-            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
-            alt="Lounge"
-            className={styles.gridImage}
-          />
-        </div>
-        <div className={styles.imgWrapper}>
-          <img
-            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80"
-            alt="Spa"
-            className={styles.gridImage}
-          />
-        </div>
-        <div className={styles.imgWrapper}>
-          <img
-            src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&q=80"
-            alt="Bar"
-            className={styles.gridImage}
-          />
-        </div>
-        <div className={styles.imgWrapper}>
-          <img
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80"
-            alt="Dining"
-            className={styles.gridImage}
-          />
-        </div>
-        <div className={styles.imgWrapper}>
-          <img
-            src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=600&q=80"
-            alt="Yoga"
-            className={styles.gridImage}
-          />
-        </div>
-        <div className={styles.imgWrapper}>
-          <img
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
-            alt="Pool"
-            className={styles.gridImage}
-          />
-        </div>
-      </section>
-
-      {/* BOTTOM TEXT COLUMNS */}
+      {/* SECTION 2: Hero Section (Coastal Charm) */}
       <section
-        className={`${styles.gridThree} ${styles.slideUp} ${styles.delayMore}`}
+        className={styles.charmHero}
+        style={{ backgroundImage: 'url("/images/ARB. 7.jpg")' }}
       >
-        <div className={styles.textBlock}>
-          <h3 className={styles.blockTitle}>Vibrance in Motion</h3>
-          <p className={styles.blockText}>
-            Arabella thrives on energy, movement and a dynamic spirit that keeps
-            up with you, always evolving, never static. Here, you'll find
-            everything you need to stay connected, inspired and refreshed.
-          </p>
+        <motion.div
+          className={styles.charmText}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2>Modern Comfort. <br />Coastal Charm Awaits</h2>
+        </motion.div>
+      </section>
+
+      {/* SECTION 3: Our Amenities */}
+      <section className={styles.amenitiesSection}>
+        <div className={styles.amenitiesHeader}>
+          <h2>Our Amenities</h2>
+          <p>The story and spaces interlinked with comfort. Your experience at Arabella counts on our respect and attention you receive. Nice, fresh and amazing atmosphere, just sat on the water on the side of coastal charm.</p>
         </div>
-        <div className={styles.textBlock}>
-          <h3 className={styles.blockTitle}>For every side of you</h3>
-          <p className={styles.blockText}>
-            Work, play or unwind—it's all within reach at Arabella. We blend
-            business with leisure, offering spaces that fuel both creativity and
-            relaxation.
-          </p>
+
+        <div className={styles.amenitiesGrid}>
+          {/* Pool */}
+          <motion.div
+            className={styles.amenityCard}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className={styles.amenityCircle}>
+              <img src="/images/Arb. 1.jpg" alt="Pool" />
+            </div>
+            <div className={styles.amenityLabel}>
+              <Wifi size={22} /> Relaxing Poolside
+            </div>
+          </motion.div>
+
+          {/* Parking */}
+          <motion.div
+            className={styles.amenityCard}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className={styles.amenityCircle}>
+              <img src="/images/Arb. 4.jpg" alt="Parking" />
+            </div>
+            <div className={styles.amenityLabel}>
+              <Car size={22} /> Convenient Parking
+            </div>
+          </motion.div>
+
+          {/* Courtyard */}
+          <motion.div
+            className={styles.amenityCard}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className={styles.amenityCircle}>
+              <img src="/images/Arb. 6.jpg" alt="Courtyard" />
+            </div>
+            <div className={styles.amenityLabel}>
+              <Coffee size={22} /> Tranquil Courtyard
+            </div>
+          </motion.div>
         </div>
-        <div className={styles.textBlock}>
-          <h3 className={styles.blockTitle}>Where You're Front and Centre</h3>
-          <p className={styles.blockText}>
-            At Arabella, everything is designed around you—your pace, your
-            preferences, your experience. No distractions, no compromises. Just
-            you, at the heart of it all.
-          </p>
+
+        <div style={{ textAlign: 'center' }}>
+          <a href="https://book-directonline.com/properties/southtweedmidirect" target="_blank" rel="noreferrer" className={styles.bookBtn}>
+            Book Your Serene Escape
+          </a>
         </div>
       </section>
 
-      {/* NEW SECTIONS */}
-     
-      <ExperienceLeanLuxe />
+      {/* SECTION 4: Local Adventures (Staff) */}
+      <section className={styles.localAdventures}>
+        <div
+          className={styles.localVisualWrapper}
+          style={{ backgroundImage: 'url("/images/ARB. 3.jpg")' }}
+        />
+        <motion.div
+          className={styles.localTextWrapper}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2>Local Adventures</h2>
+          <p>
+            Modern comfort in local hospitality. We are located at the heart of Tweed Heads, providing you with the best of both worlds. Explore delightful local cafes, surf spots, and much more. Our team is dedicated to making your coastal escape truly memorable with personalized recommendations and authentic local soul.
+          </p>
+        </motion.div>
+      </section>
+
     </div>
   );
 };
