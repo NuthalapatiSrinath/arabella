@@ -10,7 +10,7 @@ const slides = [
   },
   {
     id: 2,
-    image: '/images/Arb. 4.jpg',
+    image: '/images/img2.jpg',
     text: 'YOUR PERFECT GETAWAY DESTINATION'
   },
   {

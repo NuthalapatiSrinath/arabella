@@ -32,7 +32,7 @@ const galleryImages = [
   {
     id: 5,
     category: "Rooms",
-    src: "/images/Arb. 4.jpg",
+    src: "/images/img2.jpg",
     title: "Parking View",
   },
   {
@@ -44,7 +44,7 @@ const galleryImages = [
   {
     id: 7,
     category: "Rooms",
-    src: "/images/ARB. 6.jpg",
+    src: "/images/img1.jpg",
     title: "Inside View",
   },
   {

@@ -107,7 +107,7 @@ const AboutUs = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className={styles.amenityCircle}>
-              <img src="/images/Arb. 4.jpg" alt="Parking" />
+              <img src="/images/img2.jpg" alt="Parking" />
             </div>
             <div className={styles.amenityLabel}>
               <Car size={22} /> Convenient Parking
@@ -123,7 +123,7 @@ const AboutUs = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className={styles.amenityCircle}>
-              <img src="/images/Arb. 6.jpg" alt="Courtyard" />
+              <img src="/images/img1.jpg" alt="Courtyard" />
             </div>
             <div className={styles.amenityLabel}>
               <Coffee size={22} /> Tranquil Courtyard

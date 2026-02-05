@@ -19,7 +19,7 @@ const amenityItems = [
     id: 3,
     title: "Free Parking",
     desc: "Enjoy hassle-free travel with secure, free parking available right outside your room—perfect for road trips and long stays.",
-    imageSrc: "/images/ARB. 4.jpg",
+    imageSrc: "/images/img2.jpg",
   },
   {
     id: 4,
