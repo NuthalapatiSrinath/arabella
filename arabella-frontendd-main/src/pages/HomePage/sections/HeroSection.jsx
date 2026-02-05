@@ -25,7 +25,7 @@ const slides = [
   },
   {
     id: 5,
-    image: '/images/ARB. 6.jpg',
+    image: '/images/img1.jpg',
     text: 'FRIENDLY SERVICE & WARM HOSPITALITY'
   },
   {
