@@ -1,9 +1,25 @@
 .section {
   width: 100%;
-  padding: 80px 0;
+  padding: 100px 0;
+  /* More breathing room */
   position: relative;
   overflow: hidden;
-  background-color: transparent;
+  /* Warm, luxurious coastal gradient */
+  background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e6 100%);
+}
+
+.section::before {
+  /* Subtle grain or texture overlay could go here, keeping it simple for now */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image: radial-gradient(#e0d8c3 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 .container {
@@ -15,15 +31,30 @@
 }
 
 .heading {
-  font-family: "Inter", sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  /* Primary Blue */
+  font-family: "Playfair Display", "Georgia", serif;
+  /* Elegant Serif */
+  font-size: 3rem;
+  font-weight: 700;
+  /* Deep Navy/Gold combo */
   color: #1e3a8a;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #c5a365;
+  /* Gold Accent */
+  margin: 15px auto 0;
 }
 
 .scrollContainer {
@@ -43,7 +74,7 @@
   display: none;
 }
 
-.scrollContainer > * {
+.scrollContainer>* {
   flex: 0 0 auto;
   scroll-snap-align: center;
 }
@@ -64,7 +95,7 @@
     padding-left: 24px;
   }
 
-  .scrollContainer > * {
+  .scrollContainer>* {
     scroll-snap-align: start;
   }
 }

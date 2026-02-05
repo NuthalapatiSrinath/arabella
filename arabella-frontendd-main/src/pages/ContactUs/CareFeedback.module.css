@@ -2,17 +2,45 @@
 
 /* --- Main Section Layout --- */
 .careSection {
-  background-color: #fcf8f5; /* Light blush/beige background matching the image */
-  padding: 80px 0;
-  font-family: var(
-    --Font_Family,
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif
-  );
+  /* Remove solid background color */
+  /* background-color: #fcf8f5; */
+
+  /* Background image set via inline style to access public folder */
+  /* background-image: url("/images/arabella.jpg"); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Parallax effect */
+  background-repeat: no-repeat;
+
+  padding: 100px 0;
+  /* Increase padding for more breathability */
+  font-family: var(--Font_Family,
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif);
   position: relative;
-  overflow: hidden; /* Prevents overflow from animations */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Add Dark Gradient Overlay to ensure text readability */
+.careSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      rgba(30, 10, 60, 0.85) 0%,
+      /* Deep Purple tint */
+      rgba(0, 0, 0, 0.7) 100%
+      /* Black fade */
+    );
+  z-index: -1;
+  /* Behind content */
 }
 
 .container {
@@ -28,27 +56,40 @@
 }
 
 .careTitle {
-  font-family: "Anton", sans-serif; /* Condensed bold font */
-  font-size: 3.5rem;
-  color: #5e35b1; /* Deep Purple branding */
+  font-family: "Anton", sans-serif;
+  font-size: 4rem;
+  /* Slightly larger */
+  color: #ffffff;
+  /* White text for contrast */
   margin-bottom: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 1.1;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Subtle text shadow */
 }
 
 .careDesc {
-  color: #555;
-  font-size: 1rem;
-  max-width: 650px;
+  color: #e0e0e0;
+  /* Light grey for description */
+  font-size: 1.1rem;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+  font-weight: 300;
 }
 
 /* --- Form Container & Tabs --- */
 .formContainer {
-  background: transparent; /* Seamless blend */
+  background: rgba(255, 255, 255, 0.1);
+  /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 40px;
   width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
 .tabsRow {
@@ -56,39 +97,44 @@
   justify-content: center;
   gap: 40px;
   margin-bottom: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Subtle divider line */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  /* Light divider */
   padding-bottom: 10px;
 }
 
 .tabBtn {
   background: none;
   border: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #aaa; /* Inactive grey */
+  color: rgba(255, 255, 255, 0.6);
+  /* Inactive mostly transparent white */
   cursor: pointer;
-  padding-bottom: 10px; /* Space for the border line */
+  padding-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
   position: relative;
-  top: 11px; /* Aligns border with the container line */
+  top: 11px;
 }
 
 .tabBtn:hover {
-  color: #5e35b1;
+  color: #ffffff;
 }
 
 .activeTab {
-  color: #5e35b1;
-  border-bottom-color: #5e35b1;
+  color: #ffffff;
+  /* Active white */
+  border-bottom-color: #ffffff;
+  /* White underline */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 /* --- Form Grid --- */
 .formGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-columns: 1fr 1fr;
   column-gap: 30px;
   row-gap: 25px;
 }
@@ -107,9 +153,11 @@
 .inputGroup label {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #333;
+  color: #ffffff;
+  /* White label */
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
 }
 
 /* Input Fields Styling */
@@ -119,19 +167,21 @@
 .phoneInput {
   width: 100%;
   padding: 14px 16px;
-  border: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Translucent border */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Slightly transparent white bg */
   border-radius: 4px;
   font-size: 0.95rem;
   color: #333;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .input::placeholder,
 .textarea::placeholder,
 .phoneInput::placeholder {
-  color: #bbb;
+  color: #888;
 }
 
 /* Focus States */
@@ -139,14 +189,15 @@
 .textarea:focus,
 .countrySelect:focus,
 .phoneInput:focus {
-  border-color: #5e35b1;
-  box-shadow: 0 0 0 3px rgba(94, 53, 177, 0.1);
+  border-color: #ffffff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
 /* Textarea specific */
 .textarea {
   min-height: 120px;
-  resize: vertical; /* Allow vertical resizing only */
+  resize: vertical;
   font-family: inherit;
 }
 
@@ -157,24 +208,24 @@
 }
 
 .countrySelect {
-  width: 110px; /* Fixed width for country code */
+  width: 110px;
   cursor: pointer;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 8px auto;
-  appearance: none; /* Remove default arrow */
+  appearance: none;
   padding-right: 25px;
 }
 
 .phoneInput {
-  flex: 1; /* Takes remaining space */
+  flex: 1;
 }
 
 /* --- Checkbox & Consent --- */
 .checkboxRow {
   display: flex;
-  align-items: center; /* Aligns checkbox with text vertically */
+  align-items: center;
   justify-content: center;
   gap: 12px;
   margin-top: 10px;
@@ -183,26 +234,30 @@
 .checkbox {
   width: 18px;
   height: 18px;
-  accent-color: #5e35b1; /* Colors the tick box purple */
+  accent-color: #5e35b1;
   cursor: pointer;
 }
 
 .checkboxRow label {
   font-size: 0.9rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
+  /* Lighter text for dark bg */
   cursor: pointer;
   user-select: none;
 }
 
 .checkboxRow a {
-  color: #5e35b1;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+  border-bottom: 1px dotted #ffffff;
   transition: color 0.2s;
 }
 
 .checkboxRow a:hover {
-  text-decoration: underline;
+  color: #ffcc80;
+  /* Gold/Orange accent on hover */
+  border-bottom-style: solid;
 }
 
 /* --- Submit Button --- */
@@ -217,7 +272,8 @@
   color: #5e35b1;
   border: 1px solid #5e35b1;
   padding: 14px 60px;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px;
+  /* Pill shape */
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -300,11 +356,13 @@
   }
 
   .checkbox {
-    margin-top: 3px; /* Align with top line of text */
+    margin-top: 3px;
+    /* Align with top line of text */
   }
 
   .submitBtn {
-    width: 100%; /* Full width button on mobile */
+    width: 100%;
+    /* Full width button on mobile */
   }
 }
 

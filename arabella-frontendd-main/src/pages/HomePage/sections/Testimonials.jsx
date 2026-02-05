@@ -4,26 +4,34 @@ import styles from "./Testimonials.module.css";
 
 const stories = [
   {
-    name: "Varun Kota",
-    // Ensure these images exist in public/images/ or change paths
-    image: "/images/review2.webp",
-    text: "Arabella helped us streamline our stay, giving our family more time to focus on enjoying the vacation.",
+    name: "SARAH & JAMES (MICRONESIA)",
+    image: "https://i.pravatar.cc/300?img=49", // NEW ID
+    text: "An absolute hidden gem! The room was spotless and the bed was incredibly comfortable. It felt like a luxury escape without the price tag. We can't wait to come back.",
   },
   {
-    name: "Tejaswi Velivala",
-    image: "/images/review3.webp",
-    text: "Thanks to the staff, our business trip ran smoother than ever. The efficiency gains saved us both time and money.",
+    name: "MICHAEL T. (INDIAN)",
+    image: "https://i.pravatar.cc/300?img=68", // NEW ID
+    text: "I travel for business often, and Arabella is now my go-to. The high-speed Wi-Fi and quiet atmosphere made working from my room a breeze. Truly impeccable service.",
   },
   {
-    name: "Darshan Kotla",
-    image: "/images/review2.webp",
-    text: "Fantastic service and quick turnaround time. Highly recommended for any business traveler looking to relax.",
+    name: "EMILY R. (FRANCE)",
+    image: "https://i.pravatar.cc/300?img=44", // NEW ID
+    text: "From the moment we arrived, the staff went above and beyond. The location is perfect—close to everything yet so peaceful. A perfect 10/10 experience!",
   },
-  // Added duplicates to demonstrate scrolling if you only have 3
   {
-    name: "Anil Kumar",
-    image: "/images/review3.webp",
-    text: "Fantastic service and quick turnaround time. Highly recommended for any business looking to scale.",
+    name: "DAVID & LISA (TONGA)",
+    image: "https://i.pravatar.cc/300?img=53", // NEW ID
+    text: "We loved the attention to detail. The pool area is stunning and the room service was prompt. A delightful stay that exceeded our expectations in every way.",
+  },
+  {
+    name: "ALEXANDRA K. (GERMANY)",
+    image: "https://i.pravatar.cc/300?img=28", // NEW ID
+    text: "Very clean, modern, and friendly. I appreciated the late check-in option and the warm welcome. It felt very safe and secure for a solo traveler.",
+  },
+  {
+    name: "JONATHAN B. (NZ)",
+    image: "https://i.pravatar.cc/300?img=8", // NEW ID
+    text: "Top-notch hospitality! The room was spacious and the amenities were fantastic. Great value for money near the Gold Coast. Highly recommended!",
   },
 ];
 const Testimonials = () => {

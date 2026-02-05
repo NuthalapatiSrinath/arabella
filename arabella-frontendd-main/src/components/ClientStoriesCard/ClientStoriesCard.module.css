@@ -1,42 +1,92 @@
 /* ---------- Base Styles (Desktop) ---------- */
-/* DO NOT CHANGE - Kept exactly as provided */
 .cardWrapper {
   position: relative;
-  padding-left: 90px;
-  /* space for image outside card */
-  min-width: calc(320px + 90px);
-  max-width: calc(360px + 90px);
+  padding-left: 50px;
+  padding-top: 25px;
+  /* Reduced from 40px */
+  padding-bottom: 25px;
+  /* Reduced from 40px */
+  min-width: 400px;
+  /* Fixed width helps consistency */
+  width: 400px;
+  /* Ensure they are all same width */
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* FLEX HEIGHT STRATEGY */
+  height: auto;
+  /* Let the parent (stretch) dictate height */
+  display: flex;
+  flex-direction: column;
+}
+
+.cardWrapper:hover {
+  transform: translateY(-5px);
 }
 
 .card {
   position: relative;
   overflow: visible;
-  background: white;
-  border-radius: 18px;
-  padding: 24px 16px 24px 80px;
-  /* room for avatar */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
-  margin-top: 5px;
-  height: 210px;
-  width: 370px;
-  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.98);
+  /* Less transparent for cleaner text */
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  /* Slightly tighter radius */
+  padding: 35px 25px 30px 80px;
+  /* SIGNIFICANTLY REDUCED PADDING */
+
+  box-shadow:
+    0 15px 30px -5px rgba(30, 58, 138, 0.08),
+    0 8px 8px -5px rgba(0, 0, 0, 0.03);
+
+  border: 1px solid rgba(255, 255, 255, 1);
+
+  /* FILL WRAPPER */
+  flex: 1;
+  /* Grow to fill the wrapper's height */
+  height: auto;
+  width: 100%;
+
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Decorative huge quote mark */
+.card::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  /* Tweaked position */
+  right: 20px;
+  font-family: "Georgia", serif;
+  font-size: 120px;
+  /* Smaller quote mark */
+  line-height: 1;
+  color: rgba(197, 163, 101, 0.1);
+  /* Faint Gold */
+  pointer-events: none;
 }
 
 .imageWrapper {
   position: absolute;
-  left: -70px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 140px;
-  height: 140px;
+  left: -35px;
+  /* Tighter overlap */
+  top: 35px;
+  /* Aligned nearer to top */
+  width: 90px;
+  /* Smaller image */
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid white;
-  background-color: white;
-  z-index: 0;
+  /* Gold Ring Border */
+  border: 3px solid #ffffff;
+  box-shadow:
+    0 0 0 3px #c5a365,
+    /* Gold outer ring */
+    0 8px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: transform 0.5s ease;
 }
 
 .profileImage {
@@ -45,102 +95,111 @@
   object-fit: cover;
 }
 
+.cardWrapper:hover .imageWrapper {
+  transform: scale(1.05) rotate(-3deg);
+}
+
 .content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .stars {
-  font-family: "Roboto Serif", serif;
-  font-size: 24px;
-  color: #cece08;
-  margin-bottom: 2px;
+  font-size: 16px;
+  /* Smaller stars */
+  color: #c5a365;
+  /* Gold */
+  margin-bottom: 12px;
+  letter-spacing: 3px;
+  display: flex;
+  gap: 2px;
 }
 
 .text {
-  font-family: "Roboto Serif", serif;
-  font-size: 19px;
+  font-family: "Outfit", sans-serif;
+  /* CHANGED TO SANS-SERIF */
+  font-style: normal;
+  /* REMOVED ITALIC */
+  font-size: 0.95rem;
+  /* Compact clean text */
+  line-height: 1.6;
+  color: #334155;
+  /* Slate distinct text */
+  margin-bottom: 20px;
   font-weight: 400;
-  line-height: 27px;
-  color: rgba(0, 0, 0, 0.45);
-  margin-bottom: 16px;
+  /* Added weight for better readability */
 }
 
 .name {
-  font-family: "Roboto Serif", serif;
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 25px;
-  color: #4070b1;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  /* Navy Blue */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Increased letter spacing */
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* ---------- Mobile Version (Neat & Responsive) ---------- */
+.name::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background-color: #c5a365;
+}
+
+/* ---------- Mobile Version ---------- */
 @media (max-width: 768px) {
   .cardWrapper {
-    /* Adjusted spacing for mobile */
-    padding-left: 50px;
+    padding-left: 20px;
+    padding-top: 50px;
+    /* Space for image on top */
     min-width: auto;
-    max-width: none;
-    /* Set a fixed width suitable for mobile scrolling */
     width: 85vw;
+    margin-top: 30px;
   }
 
   .card {
-    width: 100%;
-    height: auto; /* Allow height to grow with text */
-    min-height: 150px;
-    /* Reduced left padding to bring text closer to image but still clear it */
-    padding: 20px 20px 20px 55px;
+    padding: 60px 20px 30px 20px;
+    /* Top padding for image */
+    text-align: center;
     border-radius: 16px;
   }
 
+  .card::before {
+    display: none;
+    /* Hide huge quote on mobile */
+  }
+
   .imageWrapper {
-    /* Smaller image for mobile */
-    width: 90px;
-    height: 90px;
-    /* Perfect positioning: half width to hang off edge */
-    left: -45px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-width: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40px;
+    width: 80px;
+    height: 80px;
+    /* Maintain styling */
+    border: 3px solid #ffffff;
+    box-shadow:
+      0 0 0 3px #c5a365,
+      0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .cardWrapper:hover .imageWrapper {
+    transform: translateX(-50%) scale(1.05);
   }
 
   .stars {
-    font-size: 18px;
-    margin-bottom: 4px;
-  }
-
-  .text {
-    font-size: 15px; /* Readable size */
-    line-height: 1.5;
-    margin-bottom: 12px;
+    justify-content: center;
   }
 
   .name {
-    font-size: 17px;
-    line-height: 1.3;
-    font-weight: 600; /* Slightly bolder for mobile legibility */
-  }
-}
-
-/* ---------- Small Mobile (Extra Compact) ---------- */
-@media (max-width: 380px) {
-  .cardWrapper {
-    padding-left: 45px;
-    width: 300px;
-  }
-
-  .card {
-    padding: 16px 16px 16px 50px;
-  }
-
-  .imageWrapper {
-    width: 80px;
-    height: 80px;
-    left: -40px;
-  }
-
-  .text {
-    font-size: 14px;
+    justify-content: center;
   }
 }
