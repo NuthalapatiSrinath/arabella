@@ -246,7 +246,7 @@ const OwnJourneySection = () => {
       {/* --- TOP BAR --- */}
       <div className={styles.journeyTopBar}>
         <div className={styles.nextStayTitle}>
-          YOUR NEXT STAY <ArrowRight size={32} color="#7e57c2" />
+          BOOK YOUR STAY <ArrowRight size={32} color="#7e57c2" />
         </div>
 
         <div className={styles.searchInputs}>
