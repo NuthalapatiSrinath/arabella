@@ -14,7 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: -60px; /* Pull sidebar up slightly */
+  margin-bottom: -60px;
+  /* Pull sidebar up slightly */
 }
 
 .heroOverlay {
@@ -37,7 +38,8 @@
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  flex-direction: column; /* ⬇️ Forces Sidebar Top, Rooms Bottom */
+  flex-direction: column;
+  /* ⬇️ Forces Sidebar Top, Rooms Bottom */
   gap: 40px;
 }
 
@@ -65,8 +67,10 @@
 /* 🔥 ROOMS LIST: STRICTLY 1 PER ROW */
 .roomsList {
   display: flex;
-  flex-direction: column; /* ⬇️ Stack cards vertically */
-  gap: 30px; /* Space between cards */
+  flex-direction: column;
+  /* ⬇️ Stack cards vertically */
+  gap: 30px;
+  /* Space between cards */
 }
 
 .noResults {
@@ -80,4 +84,26 @@
   color: red;
   text-align: center;
   padding: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 30vh;
+    min-height: 250px;
+  }
+
+  .heroOverlay h1 {
+    font-size: 2rem;
+  }
+
+  .contentWrapper {
+    gap: 30px;
+    padding: 0 15px;
+    /* Slightly more space */
+  }
+
+  .roomsHeader h1 {
+    font-size: 1.5rem;
+  }
 }

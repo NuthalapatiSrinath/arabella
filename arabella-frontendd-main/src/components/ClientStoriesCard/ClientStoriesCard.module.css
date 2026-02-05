@@ -158,48 +158,57 @@
 /* ---------- Mobile Version ---------- */
 @media (max-width: 768px) {
   .cardWrapper {
-    padding-left: 20px;
+    padding-left: 0;
     padding-top: 50px;
-    /* Space for image on top */
+    padding-bottom: 20px;
     min-width: auto;
     width: 85vw;
-    margin-top: 30px;
+    /* High percentage width for mobile swipe */
+    margin: 0 10px;
+    /* Add margin for spacing between cards */
+    height: auto;
   }
 
   .card {
-    padding: 60px 20px 30px 20px;
-    /* Top padding for image */
+    padding: 50px 20px 30px 20px;
     text-align: center;
     border-radius: 16px;
+    box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1);
   }
 
   .card::before {
     display: none;
-    /* Hide huge quote on mobile */
   }
 
   .imageWrapper {
     left: 50%;
     transform: translateX(-50%);
-    top: -40px;
-    width: 80px;
-    height: 80px;
-    /* Maintain styling */
-    border: 3px solid #ffffff;
+    top: -35px;
+    /* Adjust overlap */
+    width: 70px;
+    height: 70px;
     box-shadow:
       0 0 0 3px #c5a365,
       0 5px 15px rgba(0, 0, 0, 0.15);
   }
 
+  /* Disable hover rotation on touch devices */
   .cardWrapper:hover .imageWrapper {
-    transform: translateX(-50%) scale(1.05);
+    transform: translateX(-50%);
   }
 
   .stars {
     justify-content: center;
+    margin-bottom: 10px;
   }
 
   .name {
     justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }

@@ -323,11 +323,27 @@
 /* Tablet (Portrait) and Mobile */
 @media (max-width: 768px) {
   .careSection {
-    padding: 50px 0;
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+    /* Ensure edge spacing */
   }
 
   .careTitle {
     font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .careDesc {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .formContainer {
+    padding: 25px 20px;
+    /* Reduced padding for mobile */
   }
 
   /* Stack form elements vertically */
@@ -344,41 +360,36 @@
 
   .tabsRow {
     gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    /* Allow wrapping if needed */
   }
 
   .tabBtn {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   /* Stack checkbox text if it gets too long */
   .checkboxRow {
     align-items: flex-start;
+    text-align: left;
   }
 
   .checkbox {
     margin-top: 3px;
-    /* Align with top line of text */
+    flex-shrink: 0;
+    /* Prevent squashing */
   }
 
   .submitBtn {
     width: 100%;
-    /* Full width button on mobile */
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .careTitle {
-    font-size: 2rem;
-  }
-
-  .container {
-    padding: 0 20px;
+    padding: 16px 0;
+    /* Taller touch target */
   }
 
   .chatIcon {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     bottom: 20px;
     right: 20px;
   }

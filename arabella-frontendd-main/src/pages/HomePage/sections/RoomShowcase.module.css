@@ -13,7 +13,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -23,45 +23,54 @@
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s;
 }
+
 .sliderBtn:hover {
   background: #4a148c;
   color: #fff;
 }
+
 .sliderBtn:first-of-type {
   left: 10px;
 }
+
 .sliderBtn:last-of-type {
   right: 10px;
 }
+
 /* src/pages/HomePage/sections/RoomShowcase.module.css */
 
 /* --- NEW ARRIVALS / ROOM SHOWCASE --- */
 .roomShowcase {
   padding: 80px 5%;
-  background: #fff; /* or #fdfbf7 based on image */
+  background: #fff;
+  /* or #fdfbf7 based on image */
   display: flex;
   gap: 60px;
   align-items: center;
-  overflow: hidden; /* Hide scrollbar overflow */
+  overflow: hidden;
+  /* Hide scrollbar overflow */
   font-family: "Inter", sans-serif;
 }
 
 /* --- LEFT TEXT COLUMN --- */
 .leftTextCol {
-  flex: 0 0 300px; /* Fixed width for text area */
+  flex: 0 0 300px;
+  /* Fixed width for text area */
   text-align: left;
   z-index: 2;
 }
 
 .bigHeadline {
-  font-family: "Oswald", "Impact", sans-serif; /* Tall condensed font */
+  font-family: "Oswald", "Impact", sans-serif;
+  /* Tall condensed font */
   font-size: 5rem;
   line-height: 0.9;
   text-transform: uppercase;
-  color: #a8a2d1; /* Light Purple for "ALL THAT'S" */
+  color: #a8a2d1;
+  /* Light Purple for "ALL THAT'S" */
   margin-bottom: 5px;
   font-weight: 700;
 }
@@ -69,7 +78,8 @@
 .bigHeadline span {
   display: block;
   font-size: 7rem;
-  color: #4a148c; /* Dark Purple for "NEW!" */
+  color: #4a148c;
+  /* Dark Purple for "NEW!" */
   margin-top: -10px;
 }
 
@@ -95,9 +105,11 @@
 
 /* --- RIGHT SLIDER SECTION --- */
 .sliderContainer {
-  flex: 1; /* Takes remaining space */
+  flex: 1;
+  /* Takes remaining space */
   position: relative;
-  min-width: 0; /* Prevents flex overflow */
+  min-width: 0;
+  /* Prevents flex overflow */
 }
 
 /* Navigation Buttons */
@@ -118,14 +130,18 @@
   z-index: 10;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .navBtn:hover {
   background: #4a148c;
   color: white;
   border-color: #4a148c;
 }
+
 .prevBtn {
   left: -25px;
-} /* Pull slightly out */
+}
+
+/* Pull slightly out */
 .nextBtn {
   right: -25px;
 }
@@ -136,17 +152,24 @@
   gap: 30px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 20px 5px; /* Padding for shadows */
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
+  padding: 20px 5px;
+  /* Padding for shadows */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 .cardStrip::-webkit-scrollbar {
   display: none;
-} /* Chrome/Safari */
+}
+
+/* Chrome/Safari */
 
 /* --- HOTEL CARD --- */
 .hotelCard {
-  flex: 0 0 380px; /* Fixed card width */
+  flex: 0 0 380px;
+  /* Fixed card width */
   background: white;
   border: 1px solid #f0f0f0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -154,6 +177,7 @@
   flex-direction: column;
   transition: transform 0.3s;
 }
+
 .hotelCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -183,7 +207,8 @@
 .cardTitle {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #4a148c; /* Purple Title */
+  color: #4a148c;
+  /* Purple Title */
   margin-bottom: 15px;
   line-height: 1.2;
 }
@@ -193,7 +218,8 @@
   color: #666;
   line-height: 1.6;
   margin-bottom: 20px;
-  flex: 1; /* Pushes footer down */
+  flex: 1;
+  /* Pushes footer down */
 }
 
 /* Amenities Icons Grid */
@@ -205,6 +231,7 @@
   font-size: 0.85rem;
   color: #555;
 }
+
 .amenityItem {
   display: flex;
   align-items: center;
@@ -240,9 +267,10 @@
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .bookBtn:hover {
   background: white;
-  color:  #4a148c;
+  color: #4a148c;
 }
 
 /* Responsive */
@@ -250,18 +278,63 @@
   .roomShowcase {
     flex-direction: column;
     align-items: flex-start;
+    padding: 60px 20px;
   }
+
   .leftTextCol {
     width: 100%;
-    margin-bottom: 30px;
+    flex: 0 0 auto;
+    margin-bottom: 40px;
   }
+
   .sliderContainer {
     width: 100%;
   }
+
   .bigHeadline {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
+
   .bigHeadline span {
-    font-size: 6rem;
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .roomShowcase {
+    padding: 40px 20px;
+  }
+
+  .bigHeadline {
+    font-size: 2.5rem;
+  }
+
+  .bigHeadline span {
+    font-size: 3.5rem;
+    margin-top: -5px;
+  }
+
+  .hotelCard {
+    flex: 0 0 85vw;
+    /* Responsive width for mobile */
+    min-width: 280px;
+  }
+
+  .cardStrip {
+    gap: 15px;
+    padding: 10px 5px 30px 5px;
+    scroll-snap-type: x mandatory;
+    /* Enable snapping */
+  }
+
+  .hotelCard {
+    scroll-snap-align: center;
+    /* Snap to center */
+    margin-bottom: 5px;
+  }
+
+  .navBtn {
+    width: 40px;
+    height: 40px;
   }
 }

@@ -110,10 +110,22 @@
 
 @media (max-width: 768px) {
   .animatedText {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    /* Reduced from 2.5rem to prevent overflow */
+    padding: 0 10px;
   }
 
   .pagination {
-    right: 20px;
+    right: 15px;
+    /* Tighter spacing */
+    gap: 10px;
+    /* Smaller gap between dots */
+  }
+}
+
+@media (max-width: 480px) {
+  .animatedText {
+    font-size: 1.6rem;
+    /* Even smaller for very narrow screens */
   }
 }

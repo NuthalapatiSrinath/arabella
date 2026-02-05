@@ -846,19 +846,30 @@
 }
 
 @media (max-width: 768px) {
+  .amenitiesTitle {
+    font-size: 2.5rem;
+    /* Reduce from 3.5rem */
+  }
 
-  /* Horizontal Scroll on mobile */
+  /* Horizontal Scroll on mobile with SNAP */
   .amenitiesRow {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
     padding-bottom: 20px;
     padding-left: 20px;
-    /* Add padding for scroll start */
+    gap: 20px;
+
+    /* Add Snap */
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
   }
 
   .amenityWrapper {
     flex-shrink: 0;
+    width: 200px;
+    /* Slightly wider than tablet 180px for better visibility */
+    scroll-snap-align: start;
   }
 }
 
