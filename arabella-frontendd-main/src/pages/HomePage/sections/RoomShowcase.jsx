@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
-  ChevronDown,
+
   Wifi,
   Car,
   Briefcase,
@@ -153,7 +153,7 @@ const RoomShowcase = () => {
       images: [roomSliderImages[1] || "https://via.placeholder.com/400"],
       amenities: ["Wifi", "Parking", "Swimming Pool", "Non-Smoking",],
     },
-     {
+    {
       _id: "deluxe-twin",
       name: "Deluxe Twin",
       description:
