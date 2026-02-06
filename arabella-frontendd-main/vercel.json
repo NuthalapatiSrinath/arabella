@@ -4,5 +4,23 @@
             "source": "/(.*)",
             "destination": "/index.html"
         }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/images/$1"
+        },
+        {
+            "src": "/videos/(.*)",
+            "dest": "/videos/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
     ]
 }
