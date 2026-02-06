@@ -332,9 +332,10 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 20px;
-    padding: 20px 10% 40px;
-    margin: 0 -10%;
-    width: auto;
+    padding: 20px 24px 40px;
+    margin: 0;
+    width: 100%;
+    scroll-padding-left: 24px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -346,8 +347,8 @@
   .amenityCard {
     flex: 0 0 80%;
     max-width: none;
-    scroll-snap-align: center;
-    padding: 10px;
+    scroll-snap-align: start;
+    padding: 0;
   }
 
   /* Ensure Local Adventures Image shows up */

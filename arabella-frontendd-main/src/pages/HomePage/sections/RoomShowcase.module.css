@@ -302,39 +302,123 @@
 
 @media (max-width: 768px) {
   .roomShowcase {
-    padding: 40px 20px;
+    padding: 30px 15px;
+    /* Reduced padding */
   }
 
   .bigHeadline {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    /* Slightly smaller */
   }
 
   .bigHeadline span {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-top: -5px;
   }
 
   .hotelCard {
-    flex: 0 0 85vw;
-    /* Responsive width for mobile */
-    min-width: 280px;
-  }
-
-  .cardStrip {
-    gap: 15px;
-    padding: 10px 5px 30px 5px;
-    scroll-snap-type: x mandatory;
-    /* Enable snapping */
-  }
-
-  .hotelCard {
-    scroll-snap-align: center;
-    /* Snap to center */
+    flex: 0 0 70vw;
+    /* Reduced from 78vw for a bigger peek */
+    min-width: 250px;
+    scroll-snap-align: start;
     margin-bottom: 5px;
   }
 
-  .navBtn {
-    width: 40px;
-    height: 40px;
+  .cardStrip {
+    gap: 5px;
+    /* Reduced gap between cards */
+    padding: 10px 20px 30px 20px;
+    /* Adjusted padding */
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 15px;
   }
+
+  .cardContent {
+    padding: 15px;
+    /* Reduced internal padding */
+    gap: 8px;
+    /* Tighter gap */
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+    /* Slightly smaller title on mobile */
+    margin-bottom: 8px;
+  }
+
+  .cardDesc {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .amenitiesGrid {
+    margin-bottom: 12px;
+    padding: 10px 0;
+    gap: 8px;
+  }
+
+  .cardFooter {
+    padding-top: 12px;
+  }
+
+  .bookBtn {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+}
+
+/* Hide only main navigation arrows */
+.navBtn {
+  display: none !important;
+}
+
+/* Restore and style inner image slider buttons */
+.sliderBtn {
+  display: flex !important;
+  /* Force restore */
+  opacity: 0.8;
+  background: white;
+  color: #4a148c;
+  width: 32px;
+  height: 32px;
+}
+
+.sliderBtn:hover {
+  opacity: 1;
+  background: #fdfbf7;
+  color: #c5a365;
+}
+
+/* Main Pagination Dots (Rooms) */
+.mainDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 5;
+}
+
+.mainDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mainDot:hover {
+  background-color: #cbd5e1;
+}
+
+.activeMainDot {
+  background-color: #c5a365;
+  /* Gold Accent */
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(197, 163, 101, 0.3);
 }

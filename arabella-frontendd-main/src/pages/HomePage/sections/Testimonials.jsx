@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ClientStoriesCard from "../../../components/ClientStoriesCard/ClientStoriesCard";
 import styles from "./Testimonials.module.css";
 
@@ -34,19 +34,64 @@ const stories = [
     text: "Top-notch hospitality! The room was spacious and the amenities were fantastic. Great value for money near the Gold Coast. Highly recommended!",
   },
 ];
+
 const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const totalWidth = scrollWidth - clientWidth;
+      const progress = scrollLeft / totalWidth;
+      const index = Math.min(
+        stories.length - 1,
+        Math.max(0, Math.round(progress * (stories.length - 1)))
+      );
+      setActiveIndex(index);
+    }
+  };
+
+  const scrollTo = (index) => {
+    if (scrollRef.current) {
+      const { scrollWidth, clientWidth } = scrollRef.current;
+      const totalWidth = scrollWidth - clientWidth;
+      const targetScroll = (index / (stories.length - 1)) * totalWidth;
+
+      scrollRef.current.scrollTo({
+        left: targetScroll,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.heading}>Client Stories</h2>
 
-        <div className={styles.scrollContainer}>
+        <div
+          className={styles.scrollContainer}
+          ref={scrollRef}
+          onScroll={handleScroll}
+        >
           {stories.map((story, idx) => (
             <ClientStoriesCard
               key={idx}
               name={story.name}
               image={story.image}
               text={story.text}
+            />
+          ))}
+        </div>
+
+        <div className={styles.dotsContainer}>
+          {stories.map((_, idx) => (
+            <button
+              key={idx}
+              className={`${styles.dot} ${activeIndex === idx ? styles.activeDot : ""}`}
+              onClick={() => scrollTo(idx)}
+              aria-label={`Go to testimonial ${idx + 1}`}
             />
           ))}
         </div>

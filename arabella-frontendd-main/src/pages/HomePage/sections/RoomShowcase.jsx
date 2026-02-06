@@ -130,10 +130,7 @@ const getAmenityIcon = (amenity) => {
 
 const RoomShowcase = () => {
   const sliderRef = useRef(null);
-  // const navigate = useNavigate();
-
-  // ---------- Cache-first load (Unused) ----------
-  // const cachedRooms = roomService.getCachedSearch({});
+  const [activeRoomIndex, setActiveRoomIndex] = useState(0);
 
   // ---------- Hardcoded Rooms per Request ----------
   const [rooms] = useState([
@@ -180,53 +177,40 @@ const RoomShowcase = () => {
   ]);
   const [loading] = useState(false);
 
-  // ---------- Fetch ALL rooms (Disabled) ----------
-  /*
-  useEffect(() => {
-    let mounted = true;
+  // ---------- Scroll Tracking ----------
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+      const progress = scrollLeft / (scrollWidth - clientWidth);
+      const index = Math.min(
+        rooms.length - 1,
+        Math.max(0, Math.round(progress * (rooms.length - 1)))
+      );
+      setActiveRoomIndex(index);
+    }
+  };
 
-    const fetchRooms = async () => {
-      if (!rooms.length) setLoading(true);
-
-      try {
-        const res = await roomService.searchRooms({});
-        if (!mounted || !res.success) return;
-
-        const isDifferent =
-          res.data.length !== rooms.length ||
-          res.data.some((r, i) => r._id !== rooms[i]?._id);
-
-        if (isDifferent) {
-          setRooms(res.data);
-        }
-      } catch (err) {
-        console.error("Failed to load rooms", err);
-      } finally {
-        if (mounted) setLoading(false);
-      }
-    };
-
-    fetchRooms();
-    return () => (mounted = false);
-    // eslint-disable-next-line
-  }, []);
-  */
-
-  // ---------- Scroll ----------
   const scroll = (direction) => {
     if (!sliderRef.current) return;
     const amount = 400;
     sliderRef.current.scrollLeft += direction === "left" ? -amount : amount;
   };
 
-  // const handleNavigate = (id) => {
-  //   navigate(`/rooms/${id}`);
-  // };
+  const scrollToRoom = (index) => {
+    if (sliderRef.current) {
+      const { scrollWidth, clientWidth } = sliderRef.current;
+      const targetScroll = (index / (rooms.length - 1)) * (scrollWidth - clientWidth);
+      sliderRef.current.scrollTo({
+        left: targetScroll,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <div className={styles.roomShowcase}>
-      {/* RIGHT SLIDER */}
       <div className={styles.sliderContainer}>
+        {/* NAV BUTTONS (Hidden on mobile via CSS) */}
         <button
           className={`${styles.navBtn} ${styles.prevBtn}`}
           onClick={() => scroll("left")}
@@ -241,7 +225,11 @@ const RoomShowcase = () => {
           <ChevronRight size={24} />
         </button>
 
-        <div className={styles.cardStrip} ref={sliderRef}>
+        <div
+          className={styles.cardStrip}
+          ref={sliderRef}
+          onScroll={handleScroll}
+        >
           {loading
             ? [1, 2, 3].map((n) => (
               <div
@@ -256,13 +244,12 @@ const RoomShowcase = () => {
               </div>
             ))
             : rooms.map((room, idx) => {
-              // ❌ NO fallback image used
               const imageUrl =
                 typeof room.images?.[0] === "string"
                   ? room.images[0]
                   : room.images?.[0]?.url;
 
-              if (!imageUrl) return null; // ❗ skip cards without image
+              if (!imageUrl) return null;
 
               const amenityList =
                 room.amenities
@@ -279,6 +266,18 @@ const RoomShowcase = () => {
                 />
               );
             })}
+        </div>
+
+        {/* Main Room Dots (Shown on mobile via CSS) */}
+        <div className={styles.mainDots}>
+          {rooms.map((_, idx) => (
+            <button
+              key={idx}
+              className={`${styles.mainDot} ${activeRoomIndex === idx ? styles.activeMainDot : ""}`}
+              onClick={() => scrollToRoom(idx)}
+              aria-label={`Go to room ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>
