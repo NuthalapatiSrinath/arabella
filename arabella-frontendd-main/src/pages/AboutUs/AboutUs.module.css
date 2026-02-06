@@ -324,4 +324,38 @@
   .amenitiesHeader h2 {
     font-size: 2.5rem;
   }
+
+  /* Fix Amenities Grid Stacking */
+  .amenitiesGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .amenityCard {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Ensure Local Adventures Image shows up */
+  .localVisualWrapper {
+    min-height: 300px;
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitleText {
+    font-size: 2.5rem;
+  }
+
+  .entranceCircle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .statueImgFixed {
+    max-width: 100%;
+  }
 }

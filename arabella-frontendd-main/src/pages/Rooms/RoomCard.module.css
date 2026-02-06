@@ -6,7 +6,8 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
-  height: 280px; /* Fixed neat height */
+  height: 280px;
+  /* Fixed neat height */
   transition: transform 0.2s, box-shadow 0.2s;
   width: 100%;
 }
@@ -18,7 +19,8 @@
 
 /* --- IMAGE SECTION --- */
 .imageSection {
-  flex: 0 0 380px; /* Fixed width for image */
+  flex: 0 0 380px;
+  /* Fixed width for image */
   position: relative;
   overflow: hidden;
 }
@@ -53,13 +55,16 @@
   transition: opacity 0.2s;
   z-index: 2;
 }
+
 .imageSection:hover .navBtnLeft,
 .imageSection:hover .navBtnRight {
   opacity: 1;
 }
+
 .navBtnLeft {
   left: 10px;
 }
+
 .navBtnRight {
   right: 10px;
 }
@@ -74,12 +79,14 @@
   gap: 5px;
   z-index: 2;
 }
+
 .dot {
   width: 6px;
   height: 6px;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
 }
+
 .activeDot {
   background: white;
   transform: scale(1.2);
@@ -177,6 +184,7 @@
   color: #555;
   font-size: 0.85rem;
 }
+
 .specsRow span {
   display: flex;
   align-items: center;
@@ -213,6 +221,7 @@
   margin-bottom: auto;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -245,6 +254,7 @@
   color: #374151;
   background: white;
 }
+
 .outlineBtn:hover {
   border-color: #111;
   color: #111;
@@ -255,6 +265,7 @@
   color: white;
   border: 1px solid #111;
 }
+
 .chooseBtn:hover {
   background: #333;
   border-color: #333;
@@ -266,19 +277,23 @@
     flex-direction: column;
     height: auto;
   }
+
   .imageSection {
     flex: none;
     width: 100%;
     height: 200px;
   }
+
   .headerRow {
     flex-direction: column-reverse;
     gap: 5px;
   }
+
   .priceBlock {
     text-align: left;
     margin-bottom: 10px;
   }
+
   .offerRow,
   .mainPriceRow {
     justify-content: flex-start;
