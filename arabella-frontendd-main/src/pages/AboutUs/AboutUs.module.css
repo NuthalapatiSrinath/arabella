@@ -325,16 +325,29 @@
     font-size: 2.5rem;
   }
 
-  /* Fix Amenities Grid Stacking */
+  /* Amenities Grid to Horizontal Slider on Mobile */
   .amenitiesGrid {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 10% 40px;
+    margin: 0 -10%;
+    width: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .amenitiesGrid::-webkit-scrollbar {
+    display: none;
   }
 
   .amenityCard {
-    max-width: 100%;
-    width: 100%;
+    flex: 0 0 80%;
+    max-width: none;
+    scroll-snap-align: center;
+    padding: 10px;
   }
 
   /* Ensure Local Adventures Image shows up */
